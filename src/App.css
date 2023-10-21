@@ -72,4 +72,32 @@ section.home {
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.46);
+    color: #FFFFFF;
+}
+
+.hero-header {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 42px;
+    margin-bottom: 23px;
+}
+
+.hero-description {
+    font-weight: 500;
+    line-height: 24px;
+    margin-bottom: 52px;
+}
+
+.cta-btn {
+    background: #FF8C38;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: .5em 0;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
 }
