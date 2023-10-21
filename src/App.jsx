@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg';
 import './App.css';
 import Nav from './components/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -12,12 +13,14 @@ function App() {
         <div className='container'>
             <Nav />
 
-            <BrowserRouter>
-                <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='about' element={<About />} />
-                </Routes>
-            </BrowserRouter>
+            <main>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path='/' element={<Home />} />
+                        
+                    </Routes>
+                </BrowserRouter>
+            </main>
         </div>
     )
 }
