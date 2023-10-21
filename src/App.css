@@ -101,3 +101,18 @@ section.home {
     text-align: center;
     color: #FFFFFF;
 }
+
+/* FOOTER */
+footer {
+    background: #252525;
+    padding: 26px 0;
+    color: #AAAAAA;
+}
+
+.footer-text {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 23px;
+    color: #AAAAAA;
+    text-align: center;
+}
