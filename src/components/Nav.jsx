@@ -13,7 +13,7 @@ export default function Nav() {
 
             <ul className="nav">
                 <li><Link to='about'>About</Link></li>
-                <li><Link to='vans'>Vans</Link></li>
+                <li><Link to='vans'>Cars</Link></li>
             </ul>
         </nav>
     )

@@ -7,6 +7,10 @@
     flex-direction: column;
 }
 
+a {
+    text-decoration: none;
+}
+
 /* NAV */
 
 nav {
@@ -93,11 +97,11 @@ section.home {
     margin-bottom: 52px;
 }
 
-.cta-btn {
+a.cta-btn {
     background: #FF8C38;
     border: none;
     border-radius: 5px;
-    width: 100%;
+    max-width: 100%;
     padding: .5em 0;
     font-weight: 700;
     font-size: 1rem;
@@ -155,7 +159,7 @@ div.about-text {
     display: block;
 }
 
-.cta-container button {
+.cta-container a {
     background: #161616;
     border-radius: 10px;
     font-weight: 700;

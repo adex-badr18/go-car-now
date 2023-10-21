@@ -1,4 +1,5 @@
 import aboutImg from '/about-img.png';
+import { Link } from 'react-router-dom';
 
 export default function About() {
     return (
@@ -19,7 +20,7 @@ export default function About() {
                 <div className="cta-container">
                     <h3>Your destination is waiting. <span>Your car is ready.</span></h3>
 
-                    <button>Explore our cars</button>
+                    <Link to='/cars'>Explore our cars</Link>
                 </div>
             </div>
         </section>

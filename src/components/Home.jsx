@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Home() {
     return (
         <section className="home">
@@ -10,7 +12,7 @@ export default function Home() {
                 </span>
             </p>
 
-            <button className="cta-btn">Find your car</button>
+            <Link to='/cars' className="cta-btn">Find your car</Link>
         </section>
     )
 }
