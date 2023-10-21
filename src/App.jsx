@@ -12,16 +12,16 @@ function App() {
 
     return (
         <div className='container'>
-            <Nav />
+            <BrowserRouter>
+                <Nav />
 
-            <main>
-                <BrowserRouter>
+                <main>
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='about' element={<About />} />
                     </Routes>
-                </BrowserRouter>
-            </main>
+                </main>
+            </BrowserRouter>
         </div>
     )
 }
