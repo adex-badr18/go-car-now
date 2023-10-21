@@ -3,7 +3,7 @@ export default function Footer() {
 
     return (
         <footer>
-            <p className="footer-text">&#169; {date.getFullYear} GOCARNOW</p>
+            <p className="footer-text">&#169; {date.getFullYear()} GOCARNOW</p>
         </footer>
     )
 }

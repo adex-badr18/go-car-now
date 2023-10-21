@@ -6,6 +6,7 @@ import Nav from './components/Nav';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
 import About from './components/About';
+import Footer from './components/Footer';
 
 function App() {
     const [count, setCount] = useState(0)
@@ -21,6 +22,8 @@ function App() {
                         <Route path='about' element={<About />} />
                     </Routes>
                 </main>
+
+                <Footer />
             </BrowserRouter>
         </div>
     )
