@@ -3,7 +3,10 @@ import logo from '/car-logo.png';
 export default function Nav() {
     return (
         <nav>
-            <img src={logo} alt="Sport car" />
+            <div className="logo-container">
+                <img src={logo} className='logo-img' alt="Sport car" />
+                <h2 className='logo-text'>Go<span>Car</span>Now</h2>
+            </div>
 
             <ul className="nav">
                 <li>About</li>
