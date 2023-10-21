@@ -8,6 +8,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Footer from './components/Footer';
 
+import '../server';
+
 function App() {
     const [count, setCount] = useState(0)
 
