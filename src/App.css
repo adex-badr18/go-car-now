@@ -101,8 +101,8 @@ section.home {
     margin-bottom: 52px;
 }
 
-a.cta-btn {
-    background: #FF8C38;
+a.link-btn {
+    background-color: #FF8C38;
     border: none;
     border-radius: 5px;
     display: inline-block;
@@ -168,15 +168,9 @@ div.about-text {
     display: block;
 }
 
-.cta-container a {
-    background: #161616;
+.cta-container .link-btn {
+    background-color: #161616;
     border-radius: 10px;
-    font-weight: 700;
-    font-size: 1rem;
-    line-height: 24px;
-    color: #FFFFFF;
-    padding: 12px 22px;
-    border: none;
 }
 
 /* CARCARD COMPONENT */
