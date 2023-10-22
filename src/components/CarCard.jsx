@@ -1,5 +1,5 @@
 export default function CarCard({ imgUrl, name, price, type }) {
-    const typeClass = 'car-type ';
+    let typeClass = 'car-type ';
     typeClass += type === 'luxury' ? 'luxury' : '';
     typeClass += type === 'simple' ? 'simple' : '';
     typeClass += type === 'rugged' ? 'rugged' : '';
