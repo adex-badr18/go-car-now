@@ -37,7 +37,7 @@ export default function Cars() {
 
     console.log(carTypes)
     const carTypesElement = carTypes.map(type => {
-        return <div key={type} className="car-type">{type}</div>
+        return <div key={type} className={`car-type ${type}`}>{type}</div>
     });
     console.log(carTypesElement);
 

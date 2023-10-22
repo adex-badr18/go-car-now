@@ -232,15 +232,15 @@ div.about-text {
     text-transform: capitalize;
 }
 
-.car-type.simple {
+.car-card .car-type.simple {
     background-color: #E17654;
 }
 
-.car-type.luxury {
+.car-card .car-type.luxury {
     background-color: #161616;
 }
 
-.car-type.rugged {
+.car-card .car-type.rugged {
     background-color: #115E59;
 }
 
@@ -280,6 +280,30 @@ section.cars {
     text-align: center;
     color: #4D4D4D;
     text-transform: capitalize;
+}
+
+.filter-container .car-type:hover,
+.filter-container .car-type:focus,
+.filter-container .car-type:active {
+    color: #FFEAD0;
+}
+
+.filter-container .car-type.simple:hover,
+.filter-container .car-type.simple:focus,
+.filter-container .car-type.simple:active {
+    background-color: #E17654;
+}
+
+.filter-container .car-type.luxury:hover,
+.filter-container .car-type.luxury:focus,
+.filter-container .car-type.luxury:active {
+    background-color: #161616;
+}
+
+.filter-container .car-type.rugged:hover,
+.filter-container .car-type.luxury:focus,
+.filter-container .car-type.luxury:active {
+    background-color: #115E59;
 }
 
 .car-type.clear-filter {
