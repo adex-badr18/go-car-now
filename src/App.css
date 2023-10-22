@@ -266,7 +266,7 @@ section.cars {
 
 .filter-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: 23px 0 56px;
 }
