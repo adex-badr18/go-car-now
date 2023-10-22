@@ -14,7 +14,7 @@ export default function Nav() {
             <nav>
                 <ul className="nav">
                     <li><Link to='about'>About</Link></li>
-                    <li><Link to='vans'>Cars</Link></li>
+                    <li><Link to='cars'>Cars</Link></li>
                 </ul>
             </nav>
         </header>

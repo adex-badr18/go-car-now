@@ -6,13 +6,12 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
+import Cars from './pages/Cars';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import '../server';
 
 function App() {
-    const [count, setCount] = useState(0)
-
     return (
         <div className='container'>
             <BrowserRouter>
@@ -22,6 +21,7 @@ function App() {
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='about' element={<About />} />
+                        <Route path='cars' element={<Cars />} />
                     </Routes>
                 </main>
 
