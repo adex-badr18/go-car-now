@@ -222,7 +222,7 @@ div.about-text {
     text-align: right;
 }
 
-.car-card .car-type {
+.car-type {
     border-radius: 5px;
     font-weight: 600;
     font-size: 14px;
@@ -236,15 +236,15 @@ div.about-text {
     text-transform: capitalize;
 }
 
-.car-card .car-type.simple {
+.car-type.simple {
     background-color: #E17654;
 }
 
-.car-card .car-type.luxury {
+.car-type.luxury {
     background-color: #161616;
 }
 
-.car-card .car-type.rugged {
+.car-type.rugged {
     background-color: #115E59;
 }
 
@@ -345,7 +345,45 @@ section.car-detail {
     color: #201F1D;
 }
 
+.car-detail .car-img {
+    width: 100%;
+    border-radius: 5px;
+}
 
+.car-detail .car-type {
+    margin: 50px 0 20px;
+}
+
+.car-detail .car-name {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    color: #161616;
+    margin-bottom: 10px;
+}
+
+.car-detail .car-price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 44px;
+    color: #161616;
+    margin-bottom: 10px;
+}
+
+.car-detail .car-price>span {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 44px;
+    color: #161616;
+}
+
+.car-detail .car-description {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #161616;
+    margin-bottom: 21px;
+}
 
 /* FOOTER */
 footer {

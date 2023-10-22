@@ -27,9 +27,9 @@ export default function CarDetail() {
 
             <div className={`car-type ${car.type}`}>{car.type}</div>
 
-            <h2 className="name">{car.name}</h2>
+            <h2 className="car-name">{car.name}</h2>
 
-            <h3 className="price">${car.price}<span>/day</span></h3>
+            <h3 className="car-price">${car.price}<span>/day</span></h3>
 
             <p className="car-description">{car.description}</p>
 
