@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 36px 27px;
+    padding: 27px;
     background-color: #FFF7ED;
 }
 
@@ -41,13 +41,14 @@ nav ul a:active {
 
 .logo-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
 }
 
 .logo-img {
     width: 70px;
+    margin-bottom: -7px;
 }
 
 .logo-text {
