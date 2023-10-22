@@ -264,8 +264,8 @@ section.cars {
 }
 
 .filter-container {
-    border: 2px solid;
     display: flex;
+    justify-content: space-between;
 }
 
 .car-type.clear-filter {
