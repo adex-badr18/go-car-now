@@ -210,7 +210,7 @@ div.about-text {
 }
 
 .car-card .car-info h3 {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     line-height: 100%;
 }
@@ -225,13 +225,13 @@ div.about-text {
 .car-card .car-type {
     border-radius: 5px;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 32px;
-    padding: 7px 0;
+    padding: 2px 0;
     color: #FFEAD0;
     align-self: flex-start;
     margin-top: -24px;
-    width: 104px;
+    width: 86px;
     text-align: center;
     text-transform: capitalize;
 }
