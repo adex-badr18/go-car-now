@@ -270,7 +270,7 @@ section.cars {
     margin: 23px 0 56px;
 }
 
-.filter-container .car-type {
+.filter-container .car-type-btn {
     padding: 7px 26px;
     background-color: #FFEAD0;
     border-radius: 5px;
@@ -280,29 +280,32 @@ section.cars {
     text-align: center;
     color: #4D4D4D;
     text-transform: capitalize;
+    outline: none;
+    border: none;
 }
 
-.filter-container .car-type:hover,
-.filter-container .car-type:focus,
-.filter-container .car-type:active {
+.filter-container .car-type-btn:hover,
+.filter-container .car-type-btn:focus,
+.filter-container .car-type-btn:active {
     color: #FFEAD0;
+    outline: none;
 }
 
-.filter-container .car-type.simple:hover,
-.filter-container .car-type.simple:focus,
-.filter-container .car-type.simple:active {
+.filter-container .car-type-btn.simple:hover,
+.filter-container .car-type-btn.simple:focus,
+.filter-container .car-type-btn.simple:active {
     background-color: #E17654;
 }
 
-.filter-container .car-type.luxury:hover,
-.filter-container .car-type.luxury:focus,
-.filter-container .car-type.luxury:active {
+.filter-container .car-type-btn.luxury:hover,
+.filter-container .car-type-btn.luxury:focus,
+.filter-container .car-type-btn.luxury:active {
     background-color: #161616;
 }
 
-.filter-container .car-type.rugged:hover,
-.filter-container .car-type.luxury:focus,
-.filter-container .car-type.luxury:active {
+.filter-container .car-type-btn.rugged:hover,
+.filter-container .car-type-btn.rugged:focus,
+.filter-container .car-type-btn.rugged:active {
     background-color: #115E59;
 }
 
