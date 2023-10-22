@@ -218,17 +218,18 @@ div.about-text {
     text-align: right;
 }
 
-.car-type {
+.car-card .car-type {
     border-radius: 5px;
     font-weight: 600;
     font-size: 16px;
     line-height: 32px;
-    padding: 2px 14px;
+    padding: 7px 0;
     color: #FFEAD0;
     align-self: flex-start;
     margin-top: -24px;
-    width: 86px;
+    width: 104px;
     text-align: center;
+    text-transform: capitalize;
 }
 
 .car-type.simple {
@@ -258,14 +259,27 @@ section.cars {
 
 .cars-list {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
     flex-wrap: wrap;
     gap: 34px;
 }
 
 .filter-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin: 23px 0 56px;
+}
+
+.filter-container .car-type {
+    padding: 7px 26px;
+    background-color: #FFEAD0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #4D4D4D;
+    text-transform: capitalize;
 }
 
 .car-type.clear-filter {
@@ -274,6 +288,7 @@ section.cars {
     line-height: 24px;
     text-decoration-line: underline;
     color: #4D4D4D;
+    background-color: unset;
 }
 
 
