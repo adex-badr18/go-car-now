@@ -119,6 +119,7 @@ a.cta-btn {
 section.about {
     padding: unset;
 }
+
 .about-img {
     width: 100%;
 }
@@ -176,6 +177,62 @@ div.about-text {
     color: #FFFFFF;
     padding: 12px 22px;
     border: none;
+}
+
+/* CARCARD COMPONENT */
+.car-card {
+    max-width: 230px;
+    width: 100%;
+}
+
+.card-img-container {
+    height: 230px;
+}
+
+.car-card .car-img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+
+}
+
+.car-card .car-info {
+    display: flex;
+    justify-content: space-between;
+    color: #161616;
+}
+
+.car-card .car-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31.7%;
+}
+
+.car-card .car-info h3>span {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.car-type {
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    padding: 2px 14px;
+    color: #FFEAD0;
+}
+
+.car-type.simple {
+    background-color: #E17654;
+}
+
+.car-type.luxury {
+    background-color: #161616;
+}
+
+.car-type.rugged {
+    background-color: #115E59;
 }
 
 /* FOOTER */
