@@ -1,5 +1,7 @@
 export default function Cars() {
     return (
-        <h1>Cars page goes here 🚙</h1>
+        <section className="cars">
+            <h1>Cars page goes here 🚙</h1>
+        </section>
     )
 }

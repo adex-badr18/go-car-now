@@ -5,6 +5,11 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
+    background-color: #FFF7ED;
+}
+
+section {
+    padding: 65px 27px;
 }
 
 a {
@@ -73,7 +78,6 @@ nav ul li {
 /* HOME */
 
 section.home {
-    padding: 65px 27px;
     background-image: url('/hero.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -111,6 +115,9 @@ a.cta-btn {
 }
 
 /* ABOUT SECTION */
+section.about {
+    padding: unset;
+}
 .about-img {
     width: 100%;
 }
