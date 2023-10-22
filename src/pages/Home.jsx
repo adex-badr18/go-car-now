@@ -12,7 +12,7 @@ export default function Home() {
                 </span>
             </p>
 
-            <Link to='/cars' className="cta-btn">Find your car</Link>
+            <Link to='/cars' className="cta-btn link-btn home-link">Find your car</Link>
         </section>
     )
 }

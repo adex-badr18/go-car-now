@@ -20,7 +20,7 @@ export default function About() {
                 <div className="cta-container">
                     <h3>Your destination is waiting. <span>Your car is ready.</span></h3>
 
-                    <Link to='/cars'>Explore our cars</Link>
+                    <Link to='/cars' className='link-btn about-link'>Explore our cars</Link>
                 </div>
             </div>
         </section>
