@@ -183,7 +183,7 @@ div.about-text {
 .car-card {
     max-width: 230px;
     width: 100%;
-    
+
 }
 
 .car-card a {
@@ -317,6 +317,32 @@ div.about-text {
     text-decoration-line: underline;
     color: #4D4D4D;
     background-color: unset;
+}
+
+/* CAR DETAIL COMPONENT */
+section.car-detail {
+    padding-top: 40px;
+}
+
+.back-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 40px;
+}
+
+.back-icon {
+    box-sizing: border-box;
+    width: 11.96px;
+    color: #858585;
+}
+
+.back-text {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 23px;
+    text-decoration-line: underline;
+    color: #201F1D;
 }
 
 
