@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { BiArrowBack } from "react-icons/bi";
 
 import '../server';
 
@@ -16,7 +17,22 @@ export default function CarDetail() {
 
     return (
         <section className="car-detail">
-            <h1>Car detail goes here.</h1>
+            <div className="back-container">
+                <BiArrowBack className="back--icon" />
+                <span className="back-text">Back to all cars</span>
+            </div>
+
+            <img src="" alt="" className="car-img" />
+
+            <div className="car-type"></div>
+
+            <h2 className="name"></h2>
+
+            <h3 className="price">$60<span>/day</span></h3>
+
+            <p className="car-description"></p>
+
+            <Link to=''>Rent this van</Link>
         </section>
     )
 }
