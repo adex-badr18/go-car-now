@@ -183,6 +183,10 @@ div.about-text {
 .car-card {
     max-width: 230px;
     width: 100%;
+    
+}
+
+.car-card a {
     display: flex;
     flex-direction: column;
     row-gap: 15px;

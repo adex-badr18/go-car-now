@@ -36,15 +36,13 @@ export default function Cars() {
             type={car.type} />
     ));
 
-    console.log(carTypes)
     const carTypesElement = carTypes.map(type => {
         return <button key={type} className={`car-type-btn ${type}`}>{type}</button>
     });
-    console.log(carTypesElement);
 
     return (
         <section className="cars">
-            <h1 className="cars-header">Explore our van options</h1>
+            <h1 className="cars-header">Explore our car options</h1>
 
             <div className="filter-container">
                 {carTypesElement}
