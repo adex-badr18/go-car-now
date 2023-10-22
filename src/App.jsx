@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import About from './pages/About';
 import Cars from './pages/Cars';
+import CarDetail from './pages/CarDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './server';
@@ -20,8 +21,9 @@ function App() {
                 <main>
                     <Routes>
                         <Route path='/' element={<Home />} />
-                        <Route path='about' element={<About />} />
-                        <Route path='cars' element={<Cars />} />
+                        <Route path='/about' element={<About />} />
+                        <Route path='/cars' element={<Cars />} />
+                        <Route path='/cars/:id' element={<CarDetail />} />
                     </Routes>
                 </main>
 

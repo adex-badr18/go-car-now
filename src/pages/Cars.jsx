@@ -29,6 +29,7 @@ export default function Cars() {
     const carsElement = carsArray.map(car => (
         <CarCard
             key={car.id}
+            id={car.id}
             imgUrl={car.imageUrl}
             name={car.name}
             price={car.price}
