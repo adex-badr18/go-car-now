@@ -1,5 +1,5 @@
 .container {
-    max-width: 720px;
+    max-width: 992px;
     width: 100%;
     min-height: 100vh;
     margin: 0 auto;
@@ -258,7 +258,7 @@ section.cars {
 
 .cars-list {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     flex-wrap: wrap;
     gap: 34px;
 }
