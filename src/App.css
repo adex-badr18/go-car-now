@@ -183,6 +183,9 @@ div.about-text {
 .car-card {
     max-width: 230px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
 }
 
 .card-img-container {
@@ -191,9 +194,9 @@ div.about-text {
 
 .car-card .car-img {
     width: 100%;
-    object-fit: cover;
+    height: 100%;
+    object-fit: fill;
     border-radius: 5px;
-
 }
 
 .car-card .car-info {
@@ -205,13 +208,14 @@ div.about-text {
 .car-card .car-info h3 {
     font-size: 20px;
     font-weight: 600;
-    line-height: 31.7%;
+    line-height: 100%;
 }
 
 .car-card .car-info h3>span {
     display: block;
     font-size: 14px;
     font-weight: 500;
+    text-align: right;
 }
 
 .car-type {
@@ -221,6 +225,10 @@ div.about-text {
     line-height: 32px;
     padding: 2px 14px;
     color: #FFEAD0;
+    align-self: flex-start;
+    margin-top: -24px;
+    width: 86px;
+    text-align: center;
 }
 
 .car-type.simple {
@@ -234,6 +242,41 @@ div.about-text {
 .car-type.rugged {
     background-color: #115E59;
 }
+
+/* CARS COMPONENT */
+section.cars {
+    /* padding-top: 40px; */
+}
+
+.cars-header {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    color: #161616;
+    margin-bottom: 23px;
+}
+
+.cars-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 34px;
+}
+
+.filter-container {
+    border: 2px solid;
+    display: flex;
+}
+
+.car-type.clear-filter {
+    width: unset;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration-line: underline;
+    color: #4D4D4D;
+}
+
+
 
 /* FOOTER */
 footer {
