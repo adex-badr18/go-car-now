@@ -390,6 +390,8 @@ section.host-dashboard>* {
 
 .dash-nav {
     margin: 2em 0 45px;
+    padding-left: 27px;
+    padding-right: 27px;
 }
 
 .dash-overview {

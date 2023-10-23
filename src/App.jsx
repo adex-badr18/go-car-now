@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
+import HostLayout from './components/HostLayout';
 
 function App() {
     return (
@@ -21,9 +22,11 @@ function App() {
                     <Route path='/about' element={<About />} />
                     <Route path='/cars' element={<Cars />} />
                     <Route path='/cars/:id' element={<CarDetail />} />
-                    <Route path='/host' element={<Dashboard />} />
-                    <Route path='/host/income' element={<Income />} />
-                    <Route path='/host/reviews' element={<Reviews />} />
+                    <Route element={<HostLayout />}>
+                        <Route path='/host' element={<Dashboard />} />
+                        <Route path='/host/income' element={<Income />} />
+                        <Route path='/host/reviews' element={<Reviews />} />
+                    </Route>
                 </Route>
             </Routes>
         </BrowserRouter>
