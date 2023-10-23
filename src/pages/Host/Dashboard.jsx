@@ -1,5 +1,6 @@
 import Nav from "../../components/Nav";
 import { Link } from "react-router-dom";
+import {AiFillStar} from "react-icons/ai";
 
 export default function Dashboard() {
     return (
@@ -18,10 +19,20 @@ export default function Dashboard() {
 
                 <div className="income-control">
                     <h5>Income last <span className="bold-text">30 days</span></h5>
-                    <h5 className="bold-text">Details</h5>
+                    <h5 className="detail-link">Details</h5>
                 </div>
 
                 <h1 className="income">$2,260</h1>
+            </div>
+
+            <div className="review-info">
+                <h4 className="review-title">Review score</h4>
+                <h5 className="review-score">
+                    <AiFillStar />
+                    5.0<span>/5</span>
+                </h5>
+
+                <h5 className="detail-link">Details</h5>
             </div>
 
         </section>

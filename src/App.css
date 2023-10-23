@@ -422,8 +422,9 @@ section.host-dashboard>* {
     text-decoration-line: underline;
 }
 
-.income-control .bold-text {
+h5.detail-link {
     font-weight: 700;
+    font-size: 1rem;
 }
 
 .income {
@@ -431,6 +432,44 @@ section.host-dashboard>* {
     font-size: 48px;
     line-height: 38px;
     color: #161616;
+}
+
+.review-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #FFDDB2;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    color: #161616;
+}
+
+.review-score {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.review-score span {
+    font-weight: 500;
+}
+
+.review-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+}
+
+.review-score>svg {
+    color: #FF8C38;
+    font-size: 16px;
+}
+
+.review-info .detail-link {
+    margin-left: auto;
 }
 
 /* FOOTER */
