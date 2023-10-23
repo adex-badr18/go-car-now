@@ -8,9 +8,9 @@ export default function HostLayout() {
             <div className="dash-nav">
                 <Nav>
                     <li><Link to='/host'>Dashboard</Link></li>
-                    <li><Link to='/host/income'>Income</Link></li>
-                    <li><Link to='/host/cars'>Cars</Link></li>
-                    <li><Link to='/host/reviews'>ٌReviews</Link></li>
+                    <li><Link to='income'>Income</Link></li>
+                    <li><Link to='cars'>Cars</Link></li>
+                    <li><Link to='reviews'>ٌReviews</Link></li>
                 </Nav>
             </div>
 
