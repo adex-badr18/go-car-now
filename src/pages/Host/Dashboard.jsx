@@ -22,7 +22,7 @@ export default function Dashboard() {
                     <h5 className="dash-link">Details</h5>
                 </div>
 
-                <h1 className="income">$2,260</h1>
+                <h1 className="overview-income">$2,260</h1>
             </div>
 
             <div className="review-info">
