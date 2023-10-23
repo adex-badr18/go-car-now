@@ -434,6 +434,8 @@ h5.dash-link {
     color: #161616;
 }
 
+/* Review */
+
 .review-info {
     display: flex;
     align-items: center;
@@ -470,6 +472,69 @@ h5.dash-link {
 
 .review-info .dash-link {
     margin-left: auto;
+}
+
+/* Listed cars */
+.dash--listed-cars {
+    padding-top: 38px;
+    margin-bottom: 53px;
+}
+
+.dash--listed-cars-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.listed-cars-title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    color: #161616;
+}
+
+.dash--cars-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.dash--car-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    background-color: #FFFFFF;
+    padding: 18px 24px;
+    border-radius: 5px;
+}
+
+.dash--car-thumb {
+    width: 65px;
+    height: 65px;
+}
+
+.dash--car {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.dash--car>h5 {
+    margin-left: auto;
+}
+
+.dash--car-name {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.dash--car-price {
+    font-weight: 500;
+    font-size: 16px;
+    color: #4D4D4D;
 }
 
 /* FOOTER */
