@@ -377,6 +377,62 @@ section.car-detail {
     margin-bottom: 21px;
 }
 
+/* HOST */
+/* Dashboard */
+section.host-dashboard {
+    padding: unset;
+}
+
+section.host-dashboard>* {
+    padding-left: 27px;
+    padding-right: 27px;
+}
+
+.dash-nav {
+    margin: 2em 0 45px;
+}
+
+.dash-overview {
+    background-color: #FFEAD0;
+    padding: 37px 0;
+}
+
+.dash-overview h2 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 22px;
+    color: #161616;
+}
+
+.income-control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2em 0;
+}
+
+.income-control h5 {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 22px;
+    color: #4D4D4D;
+}
+
+.income-control h5>span {
+    text-decoration-line: underline;
+}
+
+.income-control .bold-text {
+    font-weight: 700;
+}
+
+.income {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 38px;
+    color: #161616;
+}
+
 /* FOOTER */
 footer {
     background: #252525;
