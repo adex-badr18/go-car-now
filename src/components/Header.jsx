@@ -1,7 +1,7 @@
 import logo from '/car-logo.png';
 import { Link } from 'react-router-dom';
 
-export default function Nav() {
+export default function Header() {
     return (
         <header>
             <Link to='/'>
