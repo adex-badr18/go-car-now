@@ -16,7 +16,7 @@ a {
     text-decoration: none;
 }
 
-/* NAV */
+/* HEADER & NAV */
 
 header {
     display: flex;
@@ -26,13 +26,13 @@ header {
     background-color: #FFF7ED;
 }
 
-header a {
+.nav a {
     color: #4D4D4D;
 }
 
-nav ul a:hover,
-nav ul a:focus,
-nav ul a:active {
+.nav a:hover,
+.nav a:focus,
+.nav a:active {
     font-weight: 600;
     color: #161616;
     padding-bottom: 1px;

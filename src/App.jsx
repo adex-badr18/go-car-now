@@ -8,8 +8,7 @@ import About from './pages/About';
 import Cars from './pages/Cars/Cars';
 import CarDetail from './pages/Cars/CarDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-import './server';
+import Dashboard from './pages/Host/Dashboard';
 
 function App() {
     return (
@@ -20,6 +19,7 @@ function App() {
                     <Route path='/about' element={<About />} />
                     <Route path='/cars' element={<Cars />} />
                     <Route path='/cars/:id' element={<CarDetail />} />
+                    <Route path='/host' element={<Dashboard />} />
                 </Route>
             </Routes>
         </BrowserRouter>
