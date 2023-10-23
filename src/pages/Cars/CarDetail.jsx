@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 
-import '../server';
+import '../../server';
 
 export default function CarDetail() {
     const params = useParams();

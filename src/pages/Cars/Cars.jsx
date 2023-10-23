@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import CarCard from "../components/CarCard";
-import '../server';
+import CarCard from "../../components/CarCard";
+import '../../server';
 
 export default function Cars() {
     const [carsArray, setCarsArray] = useState([]);

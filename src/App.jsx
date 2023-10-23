@@ -5,8 +5,8 @@ import './App.css';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
-import Cars from './pages/Cars';
-import CarDetail from './pages/CarDetail';
+import Cars from './pages/Cars/Cars';
+import CarDetail from './pages/Cars/CarDetail';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import './server';
