@@ -422,7 +422,7 @@ section.host-dashboard>* {
     text-decoration-line: underline;
 }
 
-h5.detail-link {
+h5.dash-link {
     font-weight: 700;
     font-size: 1rem;
 }
@@ -468,7 +468,7 @@ h5.detail-link {
     font-size: 16px;
 }
 
-.review-info .detail-link {
+.review-info .dash-link {
     margin-left: auto;
 }
 
