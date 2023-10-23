@@ -2,8 +2,7 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
+import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Cars from './pages/Cars';
@@ -14,22 +13,16 @@ import './server';
 
 function App() {
     return (
-        <div className='container'>
-            <BrowserRouter>
-                <Nav />
-
-                <main>
-                    <Routes>
-                        <Route path='/' element={<Home />} />
-                        <Route path='/about' element={<About />} />
-                        <Route path='/cars' element={<Cars />} />
-                        <Route path='/cars/:id' element={<CarDetail />} />
-                    </Routes>
-                </main>
-
-                <Footer />
-            </BrowserRouter>
-        </div>
+        <BrowserRouter>
+            <Routes>
+                <Route element={<Layout />}>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/cars' element={<Cars />} />
+                    <Route path='/cars/:id' element={<CarDetail />} />
+                </Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 
