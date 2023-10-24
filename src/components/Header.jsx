@@ -1,8 +1,15 @@
 import logo from '/car-logo.png';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import Nav from './Nav';
 
 export default function Header() {
+    const activeStyle = {
+        fontWeight: "bold",
+        color: "#161616",
+        paddingBottom: "1px",
+        borderBottom: "3px solid #161616"
+    }
+
     return (
         <header>
             <Link to='/'>
@@ -13,9 +20,9 @@ export default function Header() {
             </Link>
 
             <Nav>
-                <li><Link to='host'>Host</Link></li>
-                <li><Link to='cars'>Cars</Link></li>
-                <li><Link to='about'>About</Link></li>
+                <li><NavLink style={({isActive}) => isActive ? activeStyle : null} to='host'>Host</NavLink></li>
+                <li><NavLink style={({isActive}) => isActive ? activeStyle : null} to='cars'>Cars</NavLink></li>
+                <li><NavLink style={({isActive}) => isActive ? activeStyle : null} to='about'>About</NavLink></li>
             </Nav>
         </header>
     )

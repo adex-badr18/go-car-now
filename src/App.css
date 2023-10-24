@@ -30,9 +30,7 @@ header {
     color: #4D4D4D;
 }
 
-.nav a:hover,
-.nav a:focus,
-.nav a:active {
+.nav a:hover {
     font-weight: 600;
     color: #161616;
     padding-bottom: 1px;

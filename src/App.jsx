@@ -22,6 +22,7 @@ function App() {
                     <Route path='about' element={<About />} />
                     <Route path='cars' element={<Cars />} />
                     <Route path='cars/:id' element={<CarDetail />} />
+                    
                     <Route path='host' element={<HostLayout />}>
                         <Route index element={<Dashboard />} />
                         <Route path='income' element={<Income />} />
