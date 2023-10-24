@@ -422,9 +422,11 @@ section.host-dashboard>* {
     text-decoration-line: underline;
 }
 
-h5.dash-link {
+.dash-link {
     font-weight: 700;
     font-size: 1rem;
+    color: #161616;
+    cursor: pointer;
 }
 
 .overview-income {

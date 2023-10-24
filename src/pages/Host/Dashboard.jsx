@@ -1,4 +1,5 @@
 import { AiFillStar } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 export default function Dashboard() {
     return (
@@ -8,7 +9,7 @@ export default function Dashboard() {
 
                 <div className="income-control">
                     <h5>Income last <span className="bold-text">30 days</span></h5>
-                    <h5 className="dash-link">Details</h5>
+                    <Link to='income' className="dash-link">Details</Link>
                 </div>
 
                 <h1 className="overview-income">$2,260</h1>
@@ -21,14 +22,14 @@ export default function Dashboard() {
                     5.0<span>/5</span>
                 </h5>
 
-                <h5 className="dash-link">Details</h5>
+                <Link to='reviews' className="dash-link">Details</Link>
             </div>
 
             <div className="dash--listed-cars">
                 <div className="dash--listed-cars-header">
                     <h4 className="listed-cars-title">Your listed cars</h4>
 
-                    <h5 className="dash-link">View all</h5>
+                    <Link to='/host/cars' className="dash-link">View all</Link>
                 </div>
 
                 <div className="dash--cars-list">
