@@ -716,6 +716,100 @@ section.host-car-detail {
     color: #161616;
 }
 
+/* HOST INCOME */
+section.income {
+    padding-top: unset;
+}
+
+.income-title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 22px;
+    color: #161616;
+    margin-bottom: 43px;
+}
+
+.income-days {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #4D4D4D;
+    margin-bottom: 31px;
+}
+
+.income-days span {
+    font-weight: 700;
+    color: #4D4D4D;
+    border-bottom: 1px solid #4D4D4D;
+}
+
+.total-income {
+    font-weight: 800;
+    font-size: 48px;
+    line-height: 38px;
+    color: #161616;
+    margin-bottom: 57px;
+}
+
+.income-chart {
+    margin-bottom: 62px;
+}
+
+.income-chart img {
+    width: 100%;
+}
+
+.transactions-header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    color: #161616;
+    margin-bottom: 2em;
+}
+
+.transactions-header span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #4D4D4D;
+}
+
+.transactions-header span>span {
+    font-weight: 700;
+    border-bottom: 1px solid #4D4D4D;
+}
+
+.transactions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.transaction {
+    background-color: #FFFFFF;
+    padding: 35px 29px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transaction .amount {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 32px;
+    color: #161616;
+}
+
+.transaction .date {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 32px;
+    color: #4D4D4D;
+}
+
 /* FOOTER */
 footer {
     background: #252525;

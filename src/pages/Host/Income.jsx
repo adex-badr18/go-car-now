@@ -1,9 +1,9 @@
 export default function Income() {
     return (
         <section className="income">
-            <h2>Income</h2>
+            <h2 className="income-title">Income</h2>
 
-            <h5 className="">Last <span>30 days</span></h5>
+            <h5 className="income-days">Last <span>30 days</span></h5>
 
             <h1 className="total-income">$2,260</h1>
 
@@ -27,7 +27,7 @@ export default function Income() {
                         <h3 className="amount">$560</h3>
                         <h5 className="date">10/11/22</h5>
                     </div>
-                    
+
                     <div className="transaction">
                         <h3 className="amount">$980</h3>
                         <h5 className="date">23/11/22</h5>
