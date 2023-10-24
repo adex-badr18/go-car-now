@@ -551,6 +551,58 @@ section.host-cars {
     line-height: 34px;
 }
 
+/* HOST CAR DETAIL */
+section.host-car-detail {
+    padding-top: unset;
+}
+
+.host-car-wrapper {
+    background-color: #FFFFFF;
+    padding: 25px;
+}
+
+.car-detail-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.host-car-wrapper .car-detail-wrapper img.car-img {
+    width: 160px;
+    height: 157px;
+    border-radius: 5px;
+}
+
+.car-basic-info .car-type {
+    margin-bottom: 16px;
+}
+
+.car-basic-info .car-name {
+    margin-bottom: 2px;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 27px;
+    color: #161616;
+}
+
+.car-basic-info .car-price {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 36px;
+    color: #161616;
+}
+
+.car-basic-info .car-price>span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 36px;
+    color: #161616;
+}
+
+.host-car-wrapper .nav {
+    margin-bottom: 27px;
+}
+
 /* FOOTER */
 footer {
     background: #252525;
