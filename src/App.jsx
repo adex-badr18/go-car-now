@@ -12,6 +12,8 @@ import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
 import HostLayout from './components/HostLayout';
+import HostCarDetail from './pages/Host/HostCarDetail';
+import HostCars from './pages/Host/HostCars';
 
 function App() {
     return (
@@ -22,11 +24,13 @@ function App() {
                     <Route path='about' element={<About />} />
                     <Route path='cars' element={<Cars />} />
                     <Route path='cars/:id' element={<CarDetail />} />
-                    
+
                     <Route path='host' element={<HostLayout />}>
                         <Route index element={<Dashboard />} />
                         <Route path='income' element={<Income />} />
                         <Route path='reviews' element={<Reviews />} />
+                        <Route path='cars' element={<HostCars />} />
+                        <Route path='cars/:id' element={<HostCarDetail />} />
                     </Route>
                 </Route>
             </Routes>
