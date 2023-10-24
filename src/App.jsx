@@ -12,9 +12,11 @@ import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
 import HostLayout from './components/HostLayout';
-import HostCarDetail from './pages/Host/HostCarDetail';
 import HostCars from './pages/Host/HostCars';
+import HostCarDetail from './pages/Host/HostCarDetail/HostCarDetail';
 import HostCarDetailLayout from './components/HostCarDetailLayout';
+import HostCarDetailPrice from './pages/Host/HostCarDetail/HostCarDetailPrice';
+import HostCarDetailPhotos from './pages/Host/HostCarDetail/HostCarDetailPhotos';
 
 function App() {
     return (
@@ -33,6 +35,8 @@ function App() {
                         <Route path='cars' element={<HostCars />} />
                         <Route path='cars/:id' element={<HostCarDetailLayout />}>
                             <Route index element={<HostCarDetail />} />
+                            <Route path='price' element={<HostCarDetailPrice />} />
+                            <Route path='photos' element={<HostCarDetailPhotos />} />
                         </Route>
                     </Route>
                 </Route>
