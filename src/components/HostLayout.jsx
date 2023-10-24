@@ -15,7 +15,7 @@ export default function HostLayout() {
             <div className="dash-nav">
                 <Nav>
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='/host'>Dashboard</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='/host' end>Dashboard</NavLink>
                     </li>
 
                     <li>
