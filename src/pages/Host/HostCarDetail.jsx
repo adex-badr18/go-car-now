@@ -19,7 +19,9 @@ export default function HostCarDetail() {
 
             <div className="host-car-wrapper">
                 <div className="car-detail-wrapper">
-                    <img src='/mini-truck.webp' alt={'Mini Truck'} className="car-img" />
+                    <div>
+                        <img src='/mini-truck.webp' alt={'Mini Truck'} className="car-img" />
+                    </div>
 
                     <div className="car-basic-info">
                         <div className={`car-type ${'simple'}`}>{'Simple'}</div>
