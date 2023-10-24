@@ -32,15 +32,15 @@ export default function HostCarDetailLayout() {
 
                 <Nav>
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='' end>Details</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='/host/cars/:id' end>Details</NavLink>
                     </li>
 
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to=''>Pricing</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='price'>Pricing</NavLink>
                     </li>
 
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to=''>Photos</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='photos'>Photos</NavLink>
                     </li>
                 </Nav>
 
