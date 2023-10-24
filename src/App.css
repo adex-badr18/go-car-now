@@ -617,6 +617,23 @@ section.host-car-detail {
     font-weight: 500;
 }
 
+/* HOST CAR DETAIL PRICE */
+.host-car-detail-price {
+    margin: 45px 0 20px;
+}
+
+.host-car-detail-price h3 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 21px;
+    color: #161616;
+}
+
+.host-car-detail-price h3>span {
+    font-size: 16px;
+    color: #4D4D4D;
+}
+
 /* FOOTER */
 footer {
     background: #252525;

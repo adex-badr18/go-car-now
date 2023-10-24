@@ -32,7 +32,7 @@ export default function HostCarDetailLayout() {
 
                 <Nav>
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='/host/cars/:id' end>Details</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='/host/cars/1' end>Details</NavLink>
                     </li>
 
                     <li>
