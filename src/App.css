@@ -647,6 +647,75 @@ section.host-car-detail {
     border-radius: 5px;
 }
 
+/* HOST REVIEWS */
+.host-reviews {
+    padding-top: unset;
+    padding-bottom: 20px;
+}
+
+.host-reviews h2 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    color: #161616;
+    margin-bottom: 2em;
+}
+
+.host-reviews h2>span {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #4D4D4D;
+    margin-left: 12px;
+}
+
+.host-reviews h2>span>span {
+    font-weight: 700;
+    border-bottom: 1px solid #161616;
+}
+
+.review-chart {
+    margin-bottom: 20px;
+}
+
+.review-chart img {
+    width: 100%;
+}
+
+.review-wrapper {
+    padding-bottom: 25px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #C7C7C7;
+}
+
+.rating-stars {
+    margin-bottom: 8px;
+}
+
+.rating-stars svg {
+    width: 24px;
+    height: 24px;
+    color: #FF8C38;
+}
+
+.review-detail {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    color: #161616;
+    margin-bottom: 8px;
+}
+
+.review-detail span {
+    color: #8C8C8C;
+}
+
+.review-comment {
+    font-weight: 500;
+    line-height: 22px;
+    color: #161616;
+}
+
 /* FOOTER */
 footer {
     background: #252525;
