@@ -14,6 +14,7 @@ import Reviews from './pages/Host/Reviews';
 import HostLayout from './components/HostLayout';
 import HostCarDetail from './pages/Host/HostCarDetail';
 import HostCars from './pages/Host/HostCars';
+import HostCarDetailLayout from './components/HostCarDetailLayout';
 
 function App() {
     return (
@@ -30,7 +31,9 @@ function App() {
                         <Route path='income' element={<Income />} />
                         <Route path='reviews' element={<Reviews />} />
                         <Route path='cars' element={<HostCars />} />
-                        <Route path='cars/:id' element={<HostCarDetail />} />
+                        <Route path='cars/:id' element={<HostCarDetailLayout />}>
+                            <Route index element={<HostCarDetail />} />
+                        </Route>
                     </Route>
                 </Route>
             </Routes>
