@@ -12,11 +12,15 @@ export default function Dashboard() {
             .then(data => setHostCars(data.cars))
     }, []);
 
-    const hostCarsElement = hostCars?.map(car => (
-        <Link to={`/host/cars/${car.id}`} key={car.id}>
-            <CarItem imgUrl={car.imageUrl} name={car.name} price={car.price} />
-        </Link>
-    ))
+    const hostCarsElement = hostCars?.map((car, index) => {
+        if (index > 2) return;
+        
+        return (
+            <Link to={`/host/cars/${car.id}`} key={car.id}>
+                <CarItem imgUrl={car.imageUrl} name={car.name} price={car.price} />
+            </Link>
+        )
+    });
 
     return (
         <section className="host-dashboard">
