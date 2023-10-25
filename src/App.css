@@ -576,9 +576,9 @@ section.host-car-detail {
 }
 
 .host-car-wrapper .car-detail-wrapper img.car-img {
-    max-width: 160px;
+    max-width: 170px;
     width: 100%;
-    /* height: 157px; */
+    height: 157px;
     border-radius: 5px;
 }
 
