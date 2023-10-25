@@ -75,6 +75,10 @@ nav ul li {
     line-height: 23px;
 }
 
+section.host-car-detail nav {
+    margin-top: 26px;
+}
+
 /* HOME */
 
 section.home {
