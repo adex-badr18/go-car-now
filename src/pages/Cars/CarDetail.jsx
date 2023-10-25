@@ -18,7 +18,7 @@ export default function CarDetail() {
 
     return (
         <section className="car-detail">
-            <Link to='/cars' className='back-link'>
+            <Link to='..' relative="path" className='back-link'>
                 <BiArrowBack className="back-icon" />
                 <span className="back-text">Back to all cars</span>
             </Link>

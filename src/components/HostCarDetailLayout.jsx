@@ -23,7 +23,7 @@ export default function HostCarDetailLayout() {
 
     return (
         <section className="host-car-detail">
-            <Link to='/host/cars' className='back-link'>
+            <Link to='..' relative="path" className='back-link'>
                 <BiArrowBack className="back-icon" />
                 <span className="back-text">Back to all cars</span>
             </Link>
