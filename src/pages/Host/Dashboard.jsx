@@ -1,7 +1,23 @@
+import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import CarItem from "../../components/CarItem";
 
 export default function Dashboard() {
+    const [hostCars, setHostCars] = useState(null);
+
+    useEffect(() => {
+        fetch('/api/host/cars')
+            .then(res => res.json())
+            .then(data => setHostCars(data.cars))
+    }, []);
+
+    const hostCarsElement = hostCars?.map(car => (
+        <Link to={`/host/cars/${car.id}`} key={car.id}>
+            <CarItem imgUrl={car.imageUrl} name={car.name} price={car.price} />
+        </Link>
+    ))
+
     return (
         <section className="host-dashboard">
             <div className="dash-overview">
@@ -33,44 +49,7 @@ export default function Dashboard() {
                 </div>
 
                 <div className="dash--cars-list">
-                    <div className="dash--car-wrapper">
-                        <img className="dash--car-thumb" src="/pickup-van.webp" alt="" />
-
-                        <div className="dash--car">
-                            <div className="dash--car-info">
-                                <h4 className="dash--car-name">Pickup Van</h4>
-                                <h5 className="dash--car-price">$100/day</h5>
-                            </div>
-
-                            <h5 className="dash-link">Edit</h5>
-                        </div>
-                    </div>
-
-                    <div className="dash--car-wrapper">
-                        <img className="dash--car-thumb" src="/hatchback.jpg" alt="" />
-
-                        <div className="dash--car">
-                            <div className="dash--car-info">
-                                <h4 className="dash--car-name">Hatchback Golf</h4>
-                                <h5 className="dash--car-price">$120/day</h5>
-                            </div>
-
-                            <h5 className="dash-link">Edit</h5>
-                        </div>
-                    </div>
-
-                    <div className="dash--car-wrapper">
-                        <img className="dash--car-thumb" src="/mini-truck.webp" alt="" />
-
-                        <div className="dash--car">
-                            <div className="dash--car-info">
-                                <h4 className="dash--car-name">Mini Truck</h4>
-                                <h5 className="dash--car-price">$80/day</h5>
-                            </div>
-
-                            <h5 className="dash-link">Edit</h5>
-                        </div>
-                    </div>
+                    {hostCarsElement ? hostCarsElement : <p className="empty-cars">Cars not available...</p>}
                 </div>
             </div>
 
