@@ -1,8 +1,19 @@
 import Nav from "./Nav";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function HostCarDetailLayout() {
+    const [car, setCar] = useState(null);
+    const carId = useParams().id;
+
+    useEffect(() => {
+        fetch(`/api/host/cars/${carId}`)
+            .then(res => res.json())
+            .then(data => setCar(data.cars[0]));
+    }, []);
+
     const activeStyle = {
         fontWeight: "bold",
         color: "#161616",
@@ -20,19 +31,19 @@ export default function HostCarDetailLayout() {
             <div className="host-car-wrapper">
                 <div className="car-detail-wrapper">
                     <div>
-                        <img src='/mini-truck.webp' alt={'Mini Truck'} className="car-img" />
+                        <img src={car?.imageUrl} alt={car?.name} className="car-img" />
                     </div>
 
                     <div className="car-basic-info">
-                        <div className={`car-type ${'simple'}`}>{'Simple'}</div>
-                        <h3 className="car-name">Mini Truck</h3>
-                        <h4 className="car-price">$60<span>/day</span></h4>
+                        <div className={`car-type ${car?.type}`}>{car?.type}</div>
+                        <h3 className="car-name">{car?.name}</h3>
+                        <h4 className="car-price">${car?.price}<span>/day</span></h4>
                     </div>
                 </div>
 
                 <Nav>
                     <li>
-                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to='/host/cars/1' end>Details</NavLink>
+                        <NavLink style={({ isActive }) => isActive ? activeStyle : null} to={`/host/cars/${carId}`} end>Details</NavLink>
                     </li>
 
                     <li>
