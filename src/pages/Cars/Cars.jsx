@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import CarCard from "../../components/CarCard";
 import '../../server';
+import { useSearchParams } from "react-router-dom";
 
 export default function Cars() {
     const [carsArray, setCarsArray] = useState([]);
     const [carTypes, setCarTypes] = useState([]);
+    const [searchparams, setSearchParams] = useSearchParams();
+
+    let typeFilter = searchparams.get('type');
+    console.log(typeFilter);
 
     useEffect(() => {
         fetch('/api/cars')
