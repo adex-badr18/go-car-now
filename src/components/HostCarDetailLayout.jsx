@@ -55,7 +55,7 @@ export default function HostCarDetailLayout() {
                     </li>
                 </Nav>
 
-                <Outlet />
+                <Outlet context={[car]} />
             </div>
 
         </section>

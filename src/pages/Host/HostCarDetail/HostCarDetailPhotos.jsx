@@ -1,15 +1,7 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 
 export default function HostCarDetailPhotos() {
-    const [car, setCar] = useState(null);
-    const carId = useParams().id;
-
-    useEffect(() => {
-        fetch(`/api/host/cars/${carId}`)
-            .then(res => res.json())
-            .then(data => setCar(data.cars[0]));
-    }, []);
+    const [car] = useOutletContext();
 
     return (
         <div className="host-car-detail-photos">
