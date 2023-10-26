@@ -50,7 +50,7 @@ export default function Cars() {
             <button
                 key={carType}
                 onClick={() => setFilterParams('type', carType)}
-                className={`car-type-btn ${carType}`}
+                className={`car-type-btn ${carType} ${typeFilter === carType ? 'selected' : ''}`}
             >
                 {carType}
             </button>
