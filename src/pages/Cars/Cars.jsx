@@ -48,13 +48,20 @@ export default function Cars() {
         return (
             <button
                 key={carType}
-                onClick={() => setSearchParams({ type: carType })}
+                onClick={() => setFilterParams('type', carType)}
                 className={`car-type-btn ${carType}`}
             >
                 {carType}
             </button>
         )
     });
+
+    function setFilterParams(key, value) {
+        setSearchParams(prevParams => {
+            value === null ? prevParams.delete(key) : prevParams.set(key, value);
+            return prevParams;
+        });
+    }
 
     return (
         <section className="cars">
@@ -63,7 +70,7 @@ export default function Cars() {
             <div className="filter-container">
                 {carTypesElement}
 
-                <button onClick={() => setSearchParams({})} className="car-type clear-filter">Clear filters</button>
+                <button onClick={() => setFilterParams('type', null)} className="car-type clear-filter">Clear filters</button>
             </div>
 
             <div className="cars-list">
