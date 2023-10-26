@@ -31,7 +31,11 @@ export default function Cars() {
         });
     }, [carsArray]);
 
-    const carsElement = carsArray.map(car => (
+    const carsElement = carsArray
+        .filter(car => {
+            return typeFilter ? car.type.toLowerCase() === typeFilter : car
+        })
+        .map(car => (
         <CarCard
             key={car.id}
             id={car.id}
