@@ -817,6 +817,37 @@ section.income {
     color: #4D4D4D;
 }
 
+/* 404 PAGE */
+section.page-not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    min-height: 73vh;
+    padding-top: unset;
+}
+
+section.page-not-found h1 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 42px;
+    color: #161616;
+    /* text-align: center; */
+}
+
+.page-not-found a {
+    width: 100%;
+    padding: 13px 0;
+    background: #161616;
+    border-radius: 4.98319px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
 /* FOOTER */
 footer {
     background: #252525;
