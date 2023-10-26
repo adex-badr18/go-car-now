@@ -283,27 +283,24 @@ div.about-text {
 }
 
 .filter-container .car-type-btn:hover,
-.filter-container .car-type-btn:focus,
-.filter-container .car-type-btn:active {
+.filter-container .car-type-btn.selected {
     color: #FFEAD0;
     outline: none;
+    font-weight: 700;
 }
 
 .filter-container .car-type-btn.simple:hover,
-.filter-container .car-type-btn.simple:focus,
-.filter-container .car-type-btn.simple:active {
+.filter-container .car-type-btn.simple.selected {
     background-color: #E17654;
 }
 
 .filter-container .car-type-btn.luxury:hover,
-.filter-container .car-type-btn.luxury:focus,
-.filter-container .car-type-btn.luxury:active {
+.filter-container .car-type-btn.luxury.selected {
     background-color: #161616;
 }
 
 .filter-container .car-type-btn.rugged:hover,
-.filter-container .car-type-btn.rugged:focus,
-.filter-container .car-type-btn.rugged:active {
+.filter-container .car-type-btn.rugged.selected {
     background-color: #115E59;
 }
 
