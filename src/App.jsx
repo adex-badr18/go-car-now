@@ -17,6 +17,7 @@ import HostCarDetail from './pages/Host/HostCarDetail/HostCarDetail';
 import HostCarDetailLayout from './components/HostCarDetailLayout';
 import HostCarDetailPrice from './pages/Host/HostCarDetail/HostCarDetailPrice';
 import HostCarDetailPhotos from './pages/Host/HostCarDetail/HostCarDetailPhotos';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                             <Route path='photos' element={<HostCarDetailPhotos />} />
                         </Route>
                     </Route>
+                    <Route path='*' element={<PageNotFound />} />
                 </Route>
             </Routes>
         </BrowserRouter>
