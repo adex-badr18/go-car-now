@@ -70,7 +70,10 @@ export default function Cars() {
             <div className="filter-container">
                 {carTypesElement}
 
-                <button onClick={() => setFilterParams('type', null)} className="car-type clear-filter">Clear filters</button>
+                {
+                    typeFilter &&
+                    <button onClick={() => setFilterParams('type', null)} className="car-type clear-filter">Clear filters</button>
+                }
             </div>
 
             <div className="cars-list">
