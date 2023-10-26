@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CarCard from "../../components/CarCard";
 import '../../server';
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 
 export default function Cars() {
     const [carsArray, setCarsArray] = useState([]);
@@ -46,7 +46,7 @@ export default function Cars() {
     ));
 
     const carTypesElement = carTypes.map(type => {
-        return <button key={type} className={`car-type-btn ${type}`}>{type}</button>
+        return <Link key={type} to={`?type=${type}`} className={`car-type-btn ${type}`}>{type}</Link>
     });
 
     return (
@@ -56,7 +56,7 @@ export default function Cars() {
             <div className="filter-container">
                 {carTypesElement}
 
-                <div className="car-type clear-filter">Clear filters</div>
+                <Link to='.' className="car-type clear-filter">Clear filters</Link>
             </div>
 
             <div className="cars-list">
