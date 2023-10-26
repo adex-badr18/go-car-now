@@ -8,6 +8,7 @@ export default function Cars() {
     const [carsArray, setCarsArray] = useState([]);
     const [carTypes, setCarTypes] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
+    const [loading, setLoading] = useState(true);
 
     let typeFilter = searchParams.get('type');
 
@@ -15,6 +16,7 @@ export default function Cars() {
         async function loadCars() {
             const data = await getCars();
             setCarsArray(data);
+            setLoading(false);
         }
 
         loadCars();
@@ -65,6 +67,12 @@ export default function Cars() {
             return prevParams;
         });
     }
+
+    if (loading) return (
+        <section>
+            <h1>Loading...</h1>
+        </section>
+    )
 
     return (
         <section className="cars">
