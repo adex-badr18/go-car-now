@@ -8,7 +8,7 @@ export default function CarCard({ id, imgUrl, name, price, type }) {
 
     return (
         <div className="car-card">
-            <Link to={`/cars/${id}`}>
+            <Link to={id}>
                 <div className="card-img-container">
                     <img src={imgUrl} alt={name} className="car-img" />
                 </div>

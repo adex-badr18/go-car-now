@@ -12,7 +12,7 @@ export default function HostCars() {
     }, []);
 
     const hostCarsElement = hostCars?.map(car => (
-        <Link to={`/host/cars/${car.id}`} key={car.id}>
+        <Link to={car.id} key={car.id}>
             <CarItem imgUrl={car.imageUrl} name={car.name} price={car.price} />
         </Link>
     ));
