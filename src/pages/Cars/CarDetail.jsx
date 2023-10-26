@@ -9,6 +9,9 @@ export default function CarDetail() {
     const [car, setCar] = useState([]);
     const location = useLocation();
 
+    console.log(location);
+    console.log(car.type);
+
     useEffect(() => {
         fetch(`/api/cars/${params.id}`)
             .then(res => res.json())
@@ -26,7 +29,7 @@ export default function CarDetail() {
                 className='back-link'
             >
                 <BiArrowBack className="back-icon" />
-                <span className="back-text">Back to all cars</span>
+                <span className="back-text">Back to {query ? `"${car.type}"` : 'all'} cars</span>
             </Link>
 
             <img src={car.imageUrl} alt={car.name} className="car-img" />
