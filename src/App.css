@@ -279,6 +279,7 @@ div.about-text {
     text-transform: capitalize;
     outline: none;
     border: none;
+    cursor: pointer;
 }
 
 .filter-container .car-type-btn:hover,
@@ -314,6 +315,8 @@ div.about-text {
     color: #4D4D4D;
     background-color: unset;
     margin: 0;
+    border: none;
+    cursor: pointer;
     align-self: unset;
 }
 

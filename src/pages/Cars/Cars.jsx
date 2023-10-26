@@ -9,7 +9,6 @@ export default function Cars() {
     const [searchparams, setSearchParams] = useSearchParams();
 
     let typeFilter = searchparams.get('type');
-    console.log(typeFilter);
 
     useEffect(() => {
         fetch('/api/cars')
@@ -36,17 +35,25 @@ export default function Cars() {
             return typeFilter ? car.type.toLowerCase() === typeFilter : car
         })
         .map(car => (
-        <CarCard
-            key={car.id}
-            id={car.id}
-            imgUrl={car.imageUrl}
-            name={car.name}
-            price={car.price}
-            type={car.type} />
-    ));
+            <CarCard
+                key={car.id}
+                id={car.id}
+                imgUrl={car.imageUrl}
+                name={car.name}
+                price={car.price}
+                type={car.type} />
+        ));
 
-    const carTypesElement = carTypes.map(type => {
-        return <Link key={type} to={`?type=${type}`} className={`car-type-btn ${type}`}>{type}</Link>
+    const carTypesElement = carTypes.map(carType => {
+        return (
+            <button
+                key={carType}
+                onClick={() => setSearchParams({ type: carType })}
+                className={`car-type-btn ${carType}`}
+            >
+                {carType}
+            </button>
+        )
     });
 
     return (
@@ -56,7 +63,7 @@ export default function Cars() {
             <div className="filter-container">
                 {carTypesElement}
 
-                <Link to='.' className="car-type clear-filter">Clear filters</Link>
+                <button onClick={() => setSearchParams({})} className="car-type clear-filter">Clear filters</button>
             </div>
 
             <div className="cars-list">
