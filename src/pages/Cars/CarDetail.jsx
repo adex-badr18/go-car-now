@@ -16,7 +16,7 @@ export default function CarDetail() {
 
     }, [params.id]);
 
-    const query = location.state?.queryString || '';
+    const query = location.state?.query || '';
 
     return (
         <section className="car-detail">

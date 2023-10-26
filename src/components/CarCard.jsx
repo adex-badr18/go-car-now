@@ -8,7 +8,7 @@ export default function CarCard({ id, imgUrl, name, price, type, searchParams })
 
     return (
         <div className="car-card">
-            <Link to={id} state={{queryString: searchParams.toString()}}>
+            <Link to={id} state={{query: searchParams.toString()}}>
                 <div className="card-img-container">
                     <img src={imgUrl} alt={name} className="car-img" />
                 </div>
