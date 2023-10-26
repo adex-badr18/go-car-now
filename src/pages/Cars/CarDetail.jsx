@@ -1,24 +1,30 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
-import { Link } from "react-router-dom";
 
 import '../../server';
 
 export default function CarDetail() {
     const params = useParams();
     const [car, setCar] = useState([]);
+    const location = useLocation();
 
     useEffect(() => {
         fetch(`/api/cars/${params.id}`)
             .then(res => res.json())
             .then(data => setCar(data.cars))
 
-    }, [params.id])
+    }, [params.id]);
+
+    const query = location.state?.queryString || '';
 
     return (
         <section className="car-detail">
-            <Link to='..' relative="path" className='back-link'>
+            <Link
+                to={`..?${query}`}
+                relative="path"
+                className='back-link'
+            >
                 <BiArrowBack className="back-icon" />
                 <span className="back-text">Back to all cars</span>
             </Link>

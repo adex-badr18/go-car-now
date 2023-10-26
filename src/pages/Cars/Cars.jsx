@@ -6,9 +6,9 @@ import { useSearchParams, Link } from "react-router-dom";
 export default function Cars() {
     const [carsArray, setCarsArray] = useState([]);
     const [carTypes, setCarTypes] = useState([]);
-    const [searchparams, setSearchParams] = useSearchParams();
+    const [searchParams, setSearchParams] = useSearchParams();
 
-    let typeFilter = searchparams.get('type');
+    let typeFilter = searchParams.get('type');
 
     useEffect(() => {
         fetch('/api/cars')
@@ -41,7 +41,8 @@ export default function Cars() {
                 imgUrl={car.imageUrl}
                 name={car.name}
                 price={car.price}
-                type={car.type} />
+                type={car.type}
+                searchParams={searchParams} />
         ));
 
     const carTypesElement = carTypes.map(carType => {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function CarCard({ id, imgUrl, name, price, type }) {
+export default function CarCard({ id, imgUrl, name, price, type, searchParams }) {
     let typeClass = 'car-type ';
     typeClass += type === 'luxury' ? 'luxury' : '';
     typeClass += type === 'simple' ? 'simple' : '';
@@ -8,7 +8,7 @@ export default function CarCard({ id, imgUrl, name, price, type }) {
 
     return (
         <div className="car-card">
-            <Link to={id}>
+            <Link to={id} state={{queryString: searchParams.toString()}}>
                 <div className="card-img-container">
                     <img src={imgUrl} alt={name} className="car-img" />
                 </div>
