@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CarCard from "../../components/CarCard";
 import '../../server';
 import { useSearchParams, Link } from "react-router-dom";
+import { getCars } from "../../api";
 
 export default function Cars() {
     const [carsArray, setCarsArray] = useState([]);
@@ -11,11 +12,12 @@ export default function Cars() {
     let typeFilter = searchParams.get('type');
 
     useEffect(() => {
-        fetch('/api/cars')
-            .then(res => res.json())
-            .then(data => {
-                setCarsArray(data.cars);
-            })
+        async function loadCars() {
+            const data = await getCars();
+            setCarsArray(data);
+        }
+
+        loadCars();
     }, []);
 
     useEffect(() => {
