@@ -624,6 +624,10 @@ section.host-car-detail {
     font-weight: 500;
 }
 
+h4.feedback {
+    margin-left: 27px;
+}
+
 /* HOST CAR DETAIL PRICE */
 .host-car-detail-price {
     margin: 45px 0 20px;

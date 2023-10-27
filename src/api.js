@@ -36,10 +36,25 @@ async function fetchHostCars() {
     }
         
     throw {
+        message: "Unable to fetch host cars.",
+        status: res.status,
+        statusText: res.statusText
+    };
+}
+
+async function fetchHostCarDetail(carId) {
+    const res = await fetch(`/api/host/cars/${carId}`);
+
+    if (res.ok) {
+        const data = await res.json();
+        return data.cars[0];
+    }
+        
+    throw {
         message: "Unable to fetch car details.",
         status: res.status,
         statusText: res.statusText
     };
 }
 
-export {getCarDetails, getCars, fetchHostCars}
+export {getCarDetails, getCars, fetchHostCars, fetchHostCarDetail}

@@ -38,13 +38,13 @@ createServer({
         this.get("/host/cars", (schema, request) => {
             // Hard-code the hostId for now
             return schema.cars.where({ hostId: "123" })
-            // return new Response(400, {}, {error: "Error fetching data"})
         })
 
         this.get("/host/cars/:id", (schema, request) => {
             // Hard-code the hostId for now
             const id = request.params.id
-            return schema.cars.where({ id, hostId: "123" })
+            // return schema.cars.where({ id, hostId: "123" })
+            return new Response(400, {}, {error: "Error fetching data"})
         })
     }
 })
