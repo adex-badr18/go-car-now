@@ -1,6 +1,3 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -11,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
+import HostLogin from './pages/HostLogin';
 import HostLayout from './components/HostLayout';
 import HostCars from './pages/Host/HostCars';
 import HostCarDetail from './pages/Host/HostCarDetail/HostCarDetail';
@@ -29,6 +27,7 @@ function App() {
                     <Route path='cars' element={<Cars />} />
                     <Route path='cars/:id' element={<CarDetail />} />
 
+                    <Route path='hostlogin' element={<HostLogin />} />
                     <Route path='host' element={<HostLayout />}>
                         <Route index element={<Dashboard />} />
                         <Route path='income' element={<Income />} />
