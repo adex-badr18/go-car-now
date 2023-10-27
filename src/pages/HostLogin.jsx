@@ -15,13 +15,17 @@ export default function HostLogin() {
         });
     }
 
-    console.log(loginFormData);
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(loginFormData);
+
+    }
 
     return (
         <section className="host-login">
             <h1 className="host-login-header">Sign in to your account</h1>
 
-            <form className="host-login-form">
+            <form className="host-login-form" onSubmit={(e) => handleSubmit(e)}>
                 <input
                     type="email"
                     value={loginFormData.email}
