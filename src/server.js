@@ -31,8 +31,8 @@ createServer({
         
         this.get("/cars/:id", (schema, request) => {
             const id = request.params.id
-            return new Response(400, {}, {error: "Error fetching data"})
-            // return schema.cars.find(id)
+            // return new Response(400, {}, {error: "Error fetching data"})
+            return schema.cars.find(id)
         })
 
         this.get("/host/cars", (schema, request) => {

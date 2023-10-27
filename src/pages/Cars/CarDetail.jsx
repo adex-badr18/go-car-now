@@ -10,12 +10,14 @@ export default function CarDetail() {
     const [car, setCar] = useState([]);
     const location = useLocation();
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function loadCarDetails() {
             try {
                 const data = await getCarDetails(params.id);
-                setCar(data.cars);
+                setCar(data);
+                setLoading(false);
             } catch (error) {
                 setError(error);
             }
@@ -30,6 +32,14 @@ export default function CarDetail() {
         return (
             <section>
                 <h1>Sorry, an error occurred: {error.message}</h1>
+            </section>
+        )
+    }
+
+    if (loading) {
+        return (
+            <section>
+                <h1>Loading...</h1>
             </section>
         )
     }
