@@ -65,7 +65,7 @@ header {
 nav ul {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 23px;
     list-style: none;
 }
 
@@ -77,6 +77,13 @@ nav ul li {
 
 section.host-car-detail nav {
     margin-top: 26px;
+}
+
+.nav svg {
+    width: 24px;
+    height: 24px;
+    color: #161616;
+    
 }
 
 /* HOME */
