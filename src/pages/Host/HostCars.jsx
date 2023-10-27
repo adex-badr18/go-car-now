@@ -1,14 +1,26 @@
 import CarItem from "../../components/CarItem";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetchHostCars } from "../../api";
 
 export default function HostCars() {
     const [hostCars, setHostCars] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('/api/host/cars')
-            .then(res => res.json())
-            .then(data => setHostCars(data.cars))
+        async function loadHostCars() {
+            try {
+                const data = await fetchHostCars();
+                setHostCars(data);
+            } catch (error) {
+                setError(error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        loadHostCars();
     }, []);
 
     const hostCarsElement = hostCars?.map(car => (
@@ -28,7 +40,12 @@ export default function HostCars() {
                     {
                         hostCarsElement ?
                             hostCarsElement :
-                            <p className="empty-cars">Cars not available...</p>
+                            <h4 className="empty-cars">
+                                {
+                                    error ? `Sorry an error occurred: ${error.message}` :
+                                        loading ? 'Loading...' : 'Cars not available...'
+                                }
+                            </h4>
                     }
                 </div>
             </div>

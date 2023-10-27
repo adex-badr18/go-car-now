@@ -17,9 +17,10 @@ export default function CarDetail() {
             try {
                 const data = await getCarDetails(params.id);
                 setCar(data);
-                setLoading(false);
             } catch (error) {
                 setError(error);
+            } finally {
+                setLoading(false);
             }
         }
 

@@ -6,7 +6,7 @@ async function getCars() {
             message: 'Failed to fetch cars',
             statusText: res.statusText,
             status: res.status
-        }
+        };
     }
 
     const data = await res.json();
@@ -24,7 +24,22 @@ async function getCarDetails(carId) {
         message: "Unable to fetch car details.",
         status: res.status,
         statusText: res.statusText
-    }
+    };
 }
 
-export {getCarDetails, getCars}
+async function fetchHostCars() {
+    const res = await fetch('/api/host/cars');
+    
+    if (res.ok) {
+        const data = await res.json();
+        return data.cars;
+    }
+        
+    throw {
+        message: "Unable to fetch car details.",
+        status: res.status,
+        statusText: res.statusText
+    };
+}
+
+export {getCarDetails, getCars, fetchHostCars}
