@@ -83,7 +83,10 @@ section.host-car-detail nav {
     width: 24px;
     height: 24px;
     color: #161616;
-    
+}
+
+.nav a.profile-avatar:hover {
+    border-bottom: unset;
 }
 
 /* HOME */
