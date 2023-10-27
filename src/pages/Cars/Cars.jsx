@@ -9,14 +9,20 @@ export default function Cars() {
     const [carTypes, setCarTypes] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     let typeFilter = searchParams.get('type');
 
     useEffect(() => {
         async function loadCars() {
-            const data = await getCars();
-            setCarsArray(data);
-            setLoading(false);
+            try {
+                const data = await getCars();
+                setCarsArray(data);
+            } catch (error) {
+                setError(error);
+            } finally {
+                setLoading(false);
+            }
         }
 
         loadCars();
@@ -25,7 +31,7 @@ export default function Cars() {
     useEffect(() => {
         setCarTypes(() => {
             const types = [];
-            carsArray.forEach(car => {
+            carsArray?.forEach(car => {
                 if (!types.includes(car.type)) {
                     types.push(car.type)
                 }
@@ -34,8 +40,7 @@ export default function Cars() {
         });
     }, [carsArray]);
 
-    const carsElement = carsArray
-        .filter(car => {
+    const carsElement = carsArray?.filter(car => {
             return typeFilter ? car.type.toLowerCase() === typeFilter : car
         })
         .map(car => (
@@ -71,6 +76,12 @@ export default function Cars() {
     if (loading) return (
         <section>
             <h1>Loading...</h1>
+        </section>
+    )
+
+    if (error) return (
+        <section>
+            <h1>Sorry, there was an error: {error.message}</h1>
         </section>
     )
 
