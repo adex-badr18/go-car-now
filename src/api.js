@@ -1,6 +1,5 @@
-export async function getCars() {
+async function getCars() {
     const res = await fetch('/api/cars');
-    console.log(res)
 
     if (!res.ok) {
         throw {
@@ -13,3 +12,19 @@ export async function getCars() {
     const data = await res.json();
     return data.cars;
 }
+
+async function getCarDetails(carId) {
+    const res = await fetch(`/api/cars/${carId}`)
+    if (res.ok) {
+        const data = await res.json();
+        return data.cars;
+    }
+
+    throw {
+        message: "Unable to fetch car details.",
+        status: res.status,
+        statusText: res.statusText
+    }
+}
+
+export {getCarDetails, getCars}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
+import { getCarDetails } from "../../api";
 
 import '../../server';
 
@@ -8,18 +9,30 @@ export default function CarDetail() {
     const params = useParams();
     const [car, setCar] = useState([]);
     const location = useLocation();
-
-    console.log(location);
-    console.log(car.type);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch(`/api/cars/${params.id}`)
-            .then(res => res.json())
-            .then(data => setCar(data.cars))
+        async function loadCarDetails() {
+            try {
+                const data = await getCarDetails(params.id);
+                setCar(data.cars);
+            } catch (error) {
+                setError(error);
+            }
+        }
 
+        loadCarDetails();
     }, [params.id]);
 
     const query = location.state?.query || '';
+
+    if (error) {
+        return (
+            <section>
+                <h1>Sorry, an error occurred: {error.message}</h1>
+            </section>
+        )
+    }
 
     return (
         <section className="car-detail">
