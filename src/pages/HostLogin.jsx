@@ -28,6 +28,7 @@ export default function HostLogin() {
             <form className="host-login-form" onSubmit={(e) => handleSubmit(e)}>
                 <input
                     type="email"
+                    className="email-input"
                     value={loginFormData.email}
                     onChange={(e) => updateFormData(e)}
                     name="email"
@@ -36,6 +37,7 @@ export default function HostLogin() {
 
                 <input
                     type="password"
+                    className="password-input"
                     value={loginFormData.password}
                     onChange={(e) => updateFormData(e)}
                     name="password"

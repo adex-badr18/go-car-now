@@ -381,6 +381,64 @@ section.car-detail {
 }
 
 /* HOST */
+/* Host login */
+.host-login-header {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 24px;
+    text-align: center;
+    color: #161616;
+}
+
+.host-login-form {
+    display: flex;
+    flex-direction: column;
+    margin: 48px 0;
+}
+
+.host-login-form input {
+    padding: 9px 13px;
+    background: #FFFFFF;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #4D4D4D;
+    border: 1px solid #d1d1d1;
+}
+
+.email-input {
+    border-radius: 6px 6px 0px 0px;
+}
+
+.password-input {
+    border-radius: 0px 0px 6px 6px;
+    margin-bottom: 22px;
+}
+
+.sign-in-btn {
+    padding: 18px 0;
+    background: #FF8C38;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.sign-up-text {
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #161616;
+}
+
+.sign-up-link {
+    font-weight: 700;
+    color: #FF8C38;
+}
+
 /* Dashboard */
 section.host-dashboard {
     padding: unset;
