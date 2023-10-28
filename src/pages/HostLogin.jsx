@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function HostLogin() {
-    const [loginFormData, setLoginFormData] = useState({email: '', password: ''});
+    const [loginFormData, setLoginFormData] = useState({ email: '', password: '' });
+    const { state } = useLocation();
 
     function updateFormData(e) {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
 
         setLoginFormData(prevData => {
             return {
@@ -23,6 +24,7 @@ export default function HostLogin() {
 
     return (
         <section className="host-login">
+            {state?.message && <h3 className="login-first">{state.message}</h3>}
             <h1 className="host-login-header">Sign in to your account</h1>
 
             <form className="host-login-form" onSubmit={(e) => handleSubmit(e)}>
