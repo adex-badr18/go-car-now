@@ -1,10 +1,11 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
 
 export default function HostLogin() {
     const [loginFormData, setLoginFormData] = useState({ email: '', password: '' });
     const { state } = useLocation();
+    const navigate = useNavigate();
     const [formStatus, setFormStatus] = useState('idle');
     const [error, setError] = useState(null);
 
@@ -26,7 +27,7 @@ export default function HostLogin() {
         async function login() {
             try {
                 const data = await loginUser(loginFormData);
-                console.log(data);
+                if (data) navigate('/host');
                 setError(null);
             } catch (error) {
                 setError(error.message);
@@ -39,7 +40,7 @@ export default function HostLogin() {
 
         // loginUser(loginFormData)
         //     .then(data => {
-        //         console.log(data);
+        //         navigate('host');
         //         setError(null)
         //     })
         //     .catch((error) => {
