@@ -4,6 +4,7 @@ import { createServer, Model, Response } from "miragejs"
 createServer({
     models: {
         cars: Model,
+        users: Model
     },
 
     seeds(server) {
@@ -19,19 +20,23 @@ createServer({
         server.create("car", { id: "10", name: "The Cruiser", price: 120, description: "The Cruiser is a van for those who love to travel in comfort and luxury. With its many windows, spacious interior and ample storage space, the Cruiser offers a beautiful view wherever you go.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/the-cruiser.png", type: "luxury", hostId: "789" })
         server.create("car", { id: "11", name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png", type: "rugged", hostId: "456" })
         server.create("car", { id: "12", name: "Crossover", price: 70, description: "Crossovers combine features of SUVs and passenger cars. They offer a higher driving position like an SUV but are built on a car platform, providing a more comfortable ride. Crossovers are versatile vehicles that appeal to a wide range of consumers, offering a good balance of space, fuel efficiency, and handling.", imageUrl: "/crossover.jpg", type: "luxury", hostId: "123" })
+
+        // Users
+        server.create("user", { id: "123", email: "b@b.com", password: "p123", name: "Bob" })
     },
 
     routes() {
         this.namespace = "api"
         this.logging = false
+        // this.timing = 2000  // => mock a 2 second delay in server response
 
         this.get("/cars", (schema, request) => {
             return schema.cars.all()
         })
-        
+
         this.get("/cars/:id", (schema, request) => {
             const id = request.params.id
-            
+
             return schema.cars.find(id)
         })
 
@@ -45,6 +50,24 @@ createServer({
             const id = request.params.id
             return schema.cars.where({ id, hostId: "123" })
             // return new Response(400, {}, {error: "Error fetching data"})
+        })
+
+        this.post("/login", (schema, request) => {
+            const { email, password } = JSON.parse(request.requestBody)
+            // ⚠️ This is an extremely naive version of authentication. Please don't
+            // do this in the real world, and never save raw text passwords
+            // in your database 😅
+            const foundUser = schema.users.findBy({ email, password })
+            if (!foundUser) {
+                return new Response(401, {}, { message: "No user with those credentials found!" })
+            }
+
+            // At the very least, don't send the password back to the client 😅
+            foundUser.password = undefined
+            return {
+                user: foundUser,
+                token: "Enjoy your pizza, here's your tokens."
+            }
         })
     }
 })
