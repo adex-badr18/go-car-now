@@ -6,6 +6,7 @@ export default function HostLogin() {
     const [loginFormData, setLoginFormData] = useState({ email: '', password: '' });
     const { state } = useLocation();
     const [formStatus, setFormStatus] = useState('idle');
+    const [error, setError] = useState(null);
 
     function updateFormData(e) {
         const { name, value } = e.target;
@@ -22,26 +23,28 @@ export default function HostLogin() {
         e.preventDefault();
         setFormStatus('submitting');
 
-        try {
-            console.log(formStatus);
-            loginUser(loginFormData)
-                .then(data => console.log(data))
-        } catch (error) {
-            console.log(error);
-        } finally {
-            setFormStatus('idle');
-            console.log(formStatus);
-        }
+        loginUser(loginFormData)
+            .then(data => {
+                console.log(data);
+            })
+            .finally(() => {
+                setFormStatus('idle');
+            })
     }
 
     return (
         <section className="host-login">
             {
                 state?.message &&
-                <h3 className="login-first">{state.message}</h3>
+                <h3 className="login-error">{state.message}</h3>
             }
 
             <h1 className="host-login-header">Sign in to your account</h1>
+
+            {
+                error &&
+                <h3 className="login-error">{state.message}</h3>
+            }
 
             <form className="host-login-form" onSubmit={(e) => handleSubmit(e)}>
                 <input
@@ -62,7 +65,9 @@ export default function HostLogin() {
                     placeholder="Password"
                     aria-label="Password" />
 
-                <button className="sign-in-btn" disabled={formStatus === 'submitting' ? true : false}>Sign in</button>
+                <button className="sign-in-btn" disabled={formStatus === 'submitting'}>
+                    {formStatus === 'submitting' ? 'Logging in...' : 'Log in'}
+                </button>
             </form>
 
             <h4 className="sign-up-text">
