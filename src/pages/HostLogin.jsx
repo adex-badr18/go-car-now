@@ -29,7 +29,7 @@ export default function HostLogin() {
                 const data = await loginUser(loginFormData);
                 if (data) {
                     localStorage.setItem('authenticated', true);
-                    navigate('/host');
+                    navigate('/host', {replace: true});
                 }
                 setError(null);
             } catch (error) {

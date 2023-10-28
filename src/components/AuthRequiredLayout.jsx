@@ -7,5 +7,5 @@ export default function AuthRequiredLayout() {
         return <Outlet/>
     }
 
-    return <Navigate to='hostlogin' state={{message: 'Please sign in first'}} />
+    return <Navigate to='hostlogin' state={{message: 'Please log in first'}} replace />
 }
