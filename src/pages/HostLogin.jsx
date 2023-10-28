@@ -23,17 +23,31 @@ export default function HostLogin() {
         e.preventDefault();
         setFormStatus('submitting');
 
-        loginUser(loginFormData)
-            .then(data => {
+        async function login() {
+            try {
+                const data = await loginUser(loginFormData);
                 console.log(data);
-                setError(null)
-            })
-            .catch((error) => {
+                setError(null);
+            } catch (error) {
                 setError(error.message);
-            })
-            .finally(() => {
+            } finally {
                 setFormStatus('idle');
-            })
+            }
+        }
+
+        login();
+
+        // loginUser(loginFormData)
+        //     .then(data => {
+        //         console.log(data);
+        //         setError(null)
+        //     })
+        //     .catch((error) => {
+        //         setError(error.message);
+        //     })
+        //     .finally(() => {
+        //         setFormStatus('idle');
+        //     })
     }
 
     return (
