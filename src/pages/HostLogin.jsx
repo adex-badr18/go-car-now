@@ -26,6 +26,10 @@ export default function HostLogin() {
         loginUser(loginFormData)
             .then(data => {
                 console.log(data);
+                setError(null)
+            })
+            .catch((error) => {
+                setError(error.message);
             })
             .finally(() => {
                 setFormStatus('idle');
@@ -41,12 +45,13 @@ export default function HostLogin() {
 
             <h1 className="host-login-header">Sign in to your account</h1>
 
-            {
-                error &&
-                <h3 className="login-error">{state.message}</h3>
-            }
 
             <form className="host-login-form" onSubmit={(e) => handleSubmit(e)}>
+                {
+                    error &&
+                    <h3 className="login-error">{error}</h3>
+                }
+
                 <input
                     type="email"
                     className="email-input"
