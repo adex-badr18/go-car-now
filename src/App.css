@@ -436,6 +436,10 @@ section.car-detail {
     color: #FFFFFF;
 }
 
+.sign-in-btn:disabled {
+    background-color: #999;
+}
+
 .sign-up-text {
     text-align: center;
     font-weight: 500;

@@ -28,7 +28,7 @@ createServer({
     routes() {
         this.namespace = "api"
         this.logging = false
-        // this.timing = 2000  // => mock a 2 second delay in server response
+        this.timing = 2000  // => mock a 2 second delay in server response
 
         this.get("/cars", (schema, request) => {
             return schema.cars.all()

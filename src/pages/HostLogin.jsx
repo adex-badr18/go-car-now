@@ -5,6 +5,7 @@ import { loginUser } from "../api";
 export default function HostLogin() {
     const [loginFormData, setLoginFormData] = useState({ email: '', password: '' });
     const { state } = useLocation();
+    const [formStatus, setFormStatus] = useState('idle');
 
     function updateFormData(e) {
         const { name, value } = e.target;
@@ -19,9 +20,18 @@ export default function HostLogin() {
 
     function handleSubmit(e) {
         e.preventDefault();
+        setFormStatus('submitting');
 
-        loginUser(loginFormData)
-            .then(data => console.log(data))
+        try {
+            console.log(formStatus);
+            loginUser(loginFormData)
+                .then(data => console.log(data))
+        } catch (error) {
+            console.log(error);
+        } finally {
+            setFormStatus('idle');
+            console.log(formStatus);
+        }
     }
 
     return (
@@ -52,7 +62,7 @@ export default function HostLogin() {
                     placeholder="Password"
                     aria-label="Password" />
 
-                <button className="sign-in-btn">Sign in</button>
+                <button className="sign-in-btn" disabled={formStatus === 'submitting' ? true : false}>Sign in</button>
             </form>
 
             <h4 className="sign-up-text">
