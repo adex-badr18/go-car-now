@@ -16,6 +16,7 @@ import HostCarDetailLayout from './components/HostCarDetailLayout';
 import HostCarDetailPrice from './pages/Host/HostCarDetail/HostCarDetailPrice';
 import HostCarDetailPhotos from './pages/Host/HostCarDetail/HostCarDetailPhotos';
 import PageNotFound from './pages/PageNotFound';
+import AuthRequiredLayout from './components/AuthRequiredLayout';
 
 function App() {
     return (
@@ -28,17 +29,21 @@ function App() {
                     <Route path='cars/:id' element={<CarDetail />} />
 
                     <Route path='hostlogin' element={<HostLogin />} />
-                    <Route path='host' element={<HostLayout />}>
-                        <Route index element={<Dashboard />} />
-                        <Route path='income' element={<Income />} />
-                        <Route path='reviews' element={<Reviews />} />
-                        <Route path='cars' element={<HostCars />} />
-                        <Route path='cars/:id' element={<HostCarDetailLayout />}>
-                            <Route index element={<HostCarDetail />} />
-                            <Route path='price' element={<HostCarDetailPrice />} />
-                            <Route path='photos' element={<HostCarDetailPhotos />} />
+
+                    <Route element={<AuthRequiredLayout />}>
+                        <Route path='host' element={<HostLayout />}>
+                            <Route index element={<Dashboard />} />
+                            <Route path='income' element={<Income />} />
+                            <Route path='reviews' element={<Reviews />} />
+                            <Route path='cars' element={<HostCars />} />
+                            <Route path='cars/:id' element={<HostCarDetailLayout />}>
+                                <Route index element={<HostCarDetail />} />
+                                <Route path='price' element={<HostCarDetailPrice />} />
+                                <Route path='photos' element={<HostCarDetailPhotos />} />
+                            </Route>
                         </Route>
                     </Route>
+                    
                     <Route path='*' element={<PageNotFound />} />
                 </Route>
             </Routes>
