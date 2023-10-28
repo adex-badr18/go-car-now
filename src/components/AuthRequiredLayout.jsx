@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 
 export default function AuthRequiredLayout() {
-    const authenticated = true;
+    const authenticated = localStorage.getItem('authenticated') || false;
 
     if (authenticated) {
         return <Outlet/>

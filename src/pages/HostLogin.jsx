@@ -27,7 +27,10 @@ export default function HostLogin() {
         async function login() {
             try {
                 const data = await loginUser(loginFormData);
-                if (data) navigate('/host');
+                if (data) {
+                    localStorage.setItem('authenticated', true);
+                    navigate('/host');
+                }
                 setError(null);
             } catch (error) {
                 setError(error.message);
