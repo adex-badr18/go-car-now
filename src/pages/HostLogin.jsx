@@ -24,7 +24,11 @@ export default function HostLogin() {
 
     return (
         <section className="host-login">
-            {state?.message && <h3 className="login-first">{state.message}</h3>}
+            {
+                state?.message &&
+                <h3 className="login-first">{state.message}</h3>
+            }
+            
             <h1 className="host-login-header">Sign in to your account</h1>
 
             <form className="host-login-form" onSubmit={(e) => handleSubmit(e)}>

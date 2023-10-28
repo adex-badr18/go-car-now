@@ -449,6 +449,18 @@ section.car-detail {
     color: #FF8C38;
 }
 
+.login-first {
+    line-height: 20px;
+    background-color: #FFFBEB;
+    color: #92400E;
+    padding: 16px;
+    border-radius: 6px;
+    min-width: 200px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
+}
+
 /* Dashboard */
 section.host-dashboard {
     padding: unset;
