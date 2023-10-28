@@ -57,4 +57,21 @@ async function fetchHostCarDetail(carId) {
     };
 }
 
-export {getCarDetails, getCars, fetchHostCars, fetchHostCarDetail}
+async function loginUser(creds) {
+    const res = await fetch("/api/login",
+        { method: "post", body: JSON.stringify(creds) }
+    )
+    const data = await res.json()
+
+    if (!res.ok) {
+        throw {
+            message: data.message,
+            statusText: res.statusText,
+            status: res.status
+        }
+    }
+
+    return data
+}
+
+export {getCarDetails, getCars, fetchHostCars, fetchHostCarDetail, loginUser}
