@@ -1,15 +1,15 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getFirestore, collection, getDocs} from "firebase/firestore/lite";
+import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyA1WSt-eDHltrp9t9psXLZVyEFKuBbpuAo",
-  authDomain: "go-car-now.firebaseapp.com",
-  projectId: "go-car-now",
-  storageBucket: "go-car-now.appspot.com",
-  messagingSenderId: "564006304003",
-  appId: "1:564006304003:web:ed71f7f23bbb4174955136"
+    apiKey: "AIzaSyA1WSt-eDHltrp9t9psXLZVyEFKuBbpuAo",
+    authDomain: "go-car-now.firebaseapp.com",
+    projectId: "go-car-now",
+    storageBucket: "go-car-now.appspot.com",
+    messagingSenderId: "564006304003",
+    appId: "1:564006304003:web:ed71f7f23bbb4174955136"
 };
 
 // Initialize Firebase
@@ -25,9 +25,23 @@ async function getCars() {
         ...doc.data()
     }));
 
-    console.log(cars);
-
     return cars;
+}
+
+async function getCarDetails(carId) {
+    const carRef = doc(db, 'cars', carId);
+    const snapshot = await getDoc(carRef);
+
+    if (snapshot.exists()) {
+        return {
+            id: snapshot.id,
+            ...snapshot.data()
+        };
+    } else {
+        throw {
+            message: "No such car exists!"
+        };
+    }
 }
 
 
@@ -46,28 +60,28 @@ async function getCars() {
 //     return data.cars;
 // }
 
-async function getCarDetails(carId) {
-    const res = await fetch(`/api/cars/${carId}`)
-    if (res.ok) {
-        const data = await res.json();
-        return data.cars;
-    }
+// async function getCarDetails(carId) {
+//     const res = await fetch(`/api/cars/${carId}`)
+//     if (res.ok) {
+//         const data = await res.json();
+//         return data.cars;
+//     }
 
-    throw {
-        message: "Unable to fetch car details.",
-        status: res.status,
-        statusText: res.statusText
-    };
-}
+//     throw {
+//         message: "Unable to fetch car details.",
+//         status: res.status,
+//         statusText: res.statusText
+//     };
+// }
 
 async function fetchHostCars() {
     const res = await fetch('/api/host/cars');
-    
+
     if (res.ok) {
         const data = await res.json();
         return data.cars;
     }
-        
+
     throw {
         message: "Unable to fetch host cars.",
         status: res.status,
@@ -82,7 +96,7 @@ async function fetchHostCarDetail(carId) {
         const data = await res.json();
         return data.cars[0];
     }
-        
+
     throw {
         message: "Unable to fetch car details.",
         status: res.status,
@@ -107,4 +121,4 @@ async function loginUser(creds) {
     return data
 }
 
-export {getCarDetails, getCars, fetchHostCars, fetchHostCarDetail, loginUser}
+export { getCarDetails, getCars, fetchHostCars, fetchHostCarDetail, loginUser }
