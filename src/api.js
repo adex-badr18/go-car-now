@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, doc, getDoc } from "firebase/firestore/lite";
+import { getFirestore, collection, getDocs, doc, getDoc, query, where } from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -44,6 +44,18 @@ async function getCarDetails(carId) {
     }
 }
 
+async function fetchHostCars() {
+    const hostCarsQuery = query(carsCollectionRef, where('hostId', '==', '123'));
+    const snapshot = await getDocs(hostCarsQuery);
+
+    const cars = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+    }));
+
+    return cars;
+}
+
 
 // async function getCars() {
 //     const res = await fetch('/api/cars');
@@ -74,20 +86,20 @@ async function getCarDetails(carId) {
 //     };
 // }
 
-async function fetchHostCars() {
-    const res = await fetch('/api/host/cars');
+// async function fetchHostCars() {
+//     const res = await fetch('/api/host/cars');
 
-    if (res.ok) {
-        const data = await res.json();
-        return data.cars;
-    }
+//     if (res.ok) {
+//         const data = await res.json();
+//         return data.cars;
+//     }
 
-    throw {
-        message: "Unable to fetch host cars.",
-        status: res.status,
-        statusText: res.statusText
-    };
-}
+//     throw {
+//         message: "Unable to fetch host cars.",
+//         status: res.status,
+//         statusText: res.statusText
+//     };
+// }
 
 async function fetchHostCarDetail(carId) {
     const res = await fetch(`/api/host/cars/${carId}`);
