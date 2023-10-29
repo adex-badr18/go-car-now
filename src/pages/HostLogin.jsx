@@ -9,6 +9,8 @@ export default function HostLogin() {
     const [formStatus, setFormStatus] = useState('idle');
     const [error, setError] = useState(null);
 
+    const from = state?.from?.pathname || '/host';
+
     function updateFormData(e) {
         const { name, value } = e.target;
 
@@ -29,7 +31,7 @@ export default function HostLogin() {
                 const data = await loginUser(loginFormData);
                 if (data) {
                     localStorage.setItem('authenticated', true);
-                    navigate('/host', {replace: true});
+                    navigate(from, {replace: true});
                 }
                 setError(null);
             } catch (error) {
