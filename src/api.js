@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import {getFirestore} from "firebase/firestore/lite";
+import {getFirestore, collection, getDocs} from "firebase/firestore/lite";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -15,22 +15,36 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
+const carsCollectionRef = collection(db, 'cars');
 
 async function getCars() {
-    const res = await fetch('/api/cars');
+    const snapshot = await getDocs(carsCollectionRef);
 
-    if (!res.ok) {
-        throw {
-            message: 'Failed to fetch cars',
-            statusText: res.statusText,
-            status: res.status
-        };
-    }
+    const cars = snapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+    }));
 
-    const data = await res.json();
-    return data.cars;
+    console.log(cars);
+
+    return cars;
 }
+
+
+// async function getCars() {
+//     const res = await fetch('/api/cars');
+
+//     if (!res.ok) {
+//         throw {
+//             message: 'Failed to fetch cars',
+//             statusText: res.statusText,
+//             status: res.status
+//         };
+//     }
+
+//     const data = await res.json();
+//     return data.cars;
+// }
 
 async function getCarDetails(carId) {
     const res = await fetch(`/api/cars/${carId}`)
