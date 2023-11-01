@@ -68,6 +68,9 @@ header {
         width: 100%;
         text-align: center;
         padding: .7rem 27px;
+    }
+
+    .main-nav ul li:not(:last-of-type) {
         border-bottom: 1px solid #E1E1E1;
     }
 
