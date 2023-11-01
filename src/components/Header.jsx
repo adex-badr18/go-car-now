@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Nav from './Nav';
 import { BsPersonCircle } from 'react-icons/bs';
 import { BiLogIn } from 'react-icons/bi';
-import { CgMenuRight } from 'react-icons/cg';
+import { CgMenuRight, CgClose } from 'react-icons/cg';
 import { useState } from 'react';
 
 
@@ -28,7 +28,7 @@ export default function Header() {
             </Link>
 
             <button className="hamburger" onClick={() => setIsNavExpanded(!isNavExpanded)}>
-                <CgMenuRight />
+                {isNavExpanded ? <CgClose /> : <CgMenuRight />}
             </button>
 
             <Nav navType='main-nav' isNavExpanded={isNavExpanded}>
