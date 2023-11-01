@@ -18,6 +18,9 @@ export default function Header() {
     };
     const authenticated = localStorage.getItem('authenticated') || false;
 
+    const hideMenu = () => setIsNavExpanded(false);
+    const toggleMenu = () => setIsNavExpanded(prev => !prev);
+
     return (
         <header>
             <Link to='/'>
@@ -27,19 +30,24 @@ export default function Header() {
                 </div>
             </Link>
 
-            <button className="hamburger" onClick={() => setIsNavExpanded(!isNavExpanded)}>
+            <button
+                className="hamburger"
+                onClick={toggleMenu}>
                 {isNavExpanded ? <CgClose /> : <CgMenuRight />}
             </button>
 
             <Nav navType='main-nav' isNavExpanded={isNavExpanded}>
-                <li><NavLink style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='host'>Host</NavLink></li>
-                <li><NavLink style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='cars'>Cars</NavLink></li>
-                <li><NavLink style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='about'>About</NavLink></li>
+                <li><NavLink onClick={hideMenu} style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='host'>Host</NavLink></li>
+                <li><NavLink onClick={hideMenu} style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='cars'>Cars</NavLink></li>
+                <li><NavLink onClick={hideMenu} style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='about'>About</NavLink></li>
                 <li>
                     {
                         authenticated ?
-                            <Link to='hostlogin' onClick={() => localStorage.removeItem('authenticated')} className='profile-avatar'><BsPersonCircle /></Link> :
-                            <Link to='hostlogin' className='profile-avatar'>
+                            <Link to='hostlogin' onClick={() => {
+                                localStorage.removeItem('authenticated')
+                                hideMenu()
+                            }} className='profile-avatar'><BsPersonCircle /></Link> :
+                            <Link onClick={hideMenu} to='hostlogin' className='profile-avatar'>
                                 <BiLogIn />
                             </Link>
                     }
