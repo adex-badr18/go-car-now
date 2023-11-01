@@ -20,7 +20,7 @@ import AuthRequiredLayout from './components/AuthRequiredLayout';
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename='/go-car-now'>
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route index element={<Home />} />
