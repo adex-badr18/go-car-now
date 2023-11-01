@@ -3,6 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 import Nav from './Nav';
 import { BsPersonCircle } from 'react-icons/bs';
 import { BiLogIn } from 'react-icons/bi';
+import { CgMenuRight } from 'react-icons/cg';
 
 
 export default function Header() {
@@ -22,6 +23,10 @@ export default function Header() {
                     <h2 className='logo-text'>Go<span>Car</span>Now</h2>
                 </div>
             </Link>
+
+            <button className="hamburger">
+                <CgMenuRight />
+            </button>
 
             <Nav>
                 <li><NavLink style={({ isActive }) => isActive ? activeStyle : null} to='host'>Host</NavLink></li>
