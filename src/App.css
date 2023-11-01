@@ -277,6 +277,17 @@ div.about-text {
     margin: 23px 0 56px;
 }
 
+@media (max-width: 505px) {
+    .cars-header {
+        text-align: center;
+    }
+
+    .filter-container {
+        flex-wrap: wrap;
+    justify-content: center;
+    }
+}
+
 .filter-container .car-type-btn {
     padding: 7px 26px;
     background-color: #FFEAD0;
