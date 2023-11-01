@@ -27,6 +27,18 @@ header {
     background-color: #FFF7ED;
 }
 
+.hamburger {
+    background-color: #FFF7ED;
+    border: none;
+    margin-left: auto;
+    display: none;
+}
+
+.hamburger svg {
+    font-size: 2rem;
+    color: #161616;
+}
+
 .nav a {
     color: #4D4D4D;
 }
@@ -60,7 +72,6 @@ header {
 .logo-text>span {
     color: #FF8C38;
 }
-
 
 nav ul {
     display: flex;
