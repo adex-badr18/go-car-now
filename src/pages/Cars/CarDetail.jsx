@@ -57,7 +57,7 @@ export default function CarDetail() {
             </Link>
 
             <img
-                src={car.imageUrl.startsWith('https://') ? car.imageUrl : `.${car.imageUrl}`}
+                src={car.imageUrl}
                 alt={car.name}
                 className="car-img" />
 

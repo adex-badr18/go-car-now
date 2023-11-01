@@ -25,7 +25,14 @@ async function getCars() {
         ...doc.data()
     }));
 
-    return cars;
+    const data = cars.map(car => {
+        return {
+            ...car,
+            imageUrl: car.imageUrl.startsWith('https://') ? car.imageUrl : `.${car.imageUrl}`
+        }
+    });
+
+    return data;
 }
 
 async function getCarDetails(carId) {
@@ -33,10 +40,13 @@ async function getCarDetails(carId) {
     const snapshot = await getDoc(carRef);
 
     if (snapshot.exists()) {
-        return {
+        const data = {
             id: snapshot.id,
-            ...snapshot.data()
+            ...snapshot.data(),
+            imageUrl: snapshot.data().imageUrl.startsWith('https://') ? snapshot.data().imageUrl : `..${snapshot.data().imageUrl}`,
         };
+        
+        return data;
     } else {
         throw {
             message: "No such car exists!"
@@ -53,7 +63,14 @@ async function fetchHostCars() {
         ...doc.data()
     }));
 
-    return cars;
+    const data = cars.map(car => {
+        return {
+            ...car,
+            imageUrl: car.imageUrl.startsWith('https://') ? car.imageUrl : `.${car.imageUrl}`
+        }
+    });
+
+    return data;
 }
 
 async function fetchHostCarDetail(carId) {
@@ -65,7 +82,14 @@ async function fetchHostCarDetail(carId) {
         ...doc.data()
     }));
 
-    return cars[0];
+    const data = cars.map(car => {
+        return {
+            ...car,
+            imageUrl: car.imageUrl.startsWith('https://') ? car.imageUrl : `../..${car.imageUrl}`
+        }
+    });
+
+    return data[0];
 }
 
 

@@ -46,7 +46,10 @@ export default function HostCarDetailLayout() {
                         <div className="host-car-wrapper">
                             <div className="car-detail-wrapper">
                                 <div>
-                                    <img src={car?.imageUrl} alt={car?.name} className="car-img" />
+                                    <img
+                                        src={car?.imageUrl}
+                                        alt={car?.name}
+                                        className="car-img" />
                                 </div>
 
                                 <div className="car-basic-info">

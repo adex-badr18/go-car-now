@@ -25,7 +25,7 @@ export default function HostCars() {
 
     const hostCarsElement = hostCars?.map(car => (
         <Link to={car.id} key={car.id}>
-            <CarItem imgUrl={car.imageUrl} name={car.name} price={car.price} />
+            <CarItem imgUrl={car.imageUrl.startsWith('.') ? `.${car.imageUrl}` : car.imageUrl} name={car.name} price={car.price} />
         </Link>
     ));
 
