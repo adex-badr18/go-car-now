@@ -52,16 +52,21 @@ header {
         display: none;
         position: absolute;
         top: 100px;
-        right: 0px;
+        right: -250px;
         flex-direction: column;
         align-items: center;
         gap: unset;
         width: 100%;
+        height: calc(100vh - 140px);
         background-color: #FFFFFF;
+        transition: right 0.3s ease-in-out;
+        animation: slideOut 0.3s forwards;
     }
 
     .main-nav ul.expanded {
         display: block;
+        right: 0;
+        animation: slideIn 0.5s forwards;
     }
 
     .main-nav ul li {
@@ -91,6 +96,26 @@ header {
     .hamburger {
         display: block;
     }
+
+    @keyframes slideIn {
+        from {
+            right: -250px;
+        }
+        to {
+            right: 0;
+        }
+    }
+    
+    @keyframes slideOut {
+        from {
+            right: 0;
+        }
+        to {
+            right: -250px;
+        }
+    }
+
+
 }
 
 .nav a {
