@@ -1,7 +1,9 @@
 export default function CarItem({imgUrl, name, price}) {
+    const imageUrl = imgUrl.startsWith('https://') ? imgUrl : `.${imgUrl}`;
+
     return (
         <div className="dash--car-wrapper">
-            <img className="dash--car-thumb" src={imgUrl} alt="" />
+            <img className="dash--car-thumb" src={imageUrl} alt="" />
 
             <div className="dash--car">
                 <div className="dash--car-info">

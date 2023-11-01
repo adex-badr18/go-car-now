@@ -56,7 +56,10 @@ export default function CarDetail() {
                 <span className="back-text">Back to {query ? `"${car.type}"` : 'all'} cars</span>
             </Link>
 
-            <img src={car.imageUrl} alt={car.name} className="car-img" />
+            <img
+                src={car.imageUrl.startsWith('https://') ? car.imageUrl : `.${car.imageUrl}`}
+                alt={car.name}
+                className="car-img" />
 
             <div className={`car-type ${car.type}`}>{car.type}</div>
 
