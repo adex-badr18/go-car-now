@@ -1,8 +1,7 @@
 import logo from '/car-logo.png';
 import { Link, NavLink } from 'react-router-dom';
 import Nav from './Nav';
-import { BsPersonCircle } from 'react-icons/bs';
-import { BiLogIn } from 'react-icons/bi';
+import { BiLogIn, BiLogOut } from 'react-icons/bi';
 import { CgMenuRight, CgClose } from 'react-icons/cg';
 import { useState } from 'react';
 
@@ -46,7 +45,7 @@ export default function Header() {
                             <Link to='hostlogin' onClick={() => {
                                 localStorage.removeItem('authenticated')
                                 hideMenu()
-                            }} className='profile-avatar'><BsPersonCircle /></Link> :
+                            }} className='profile-avatar'><BiLogOut /></Link> :
                             <Link onClick={hideMenu} to='hostlogin' className='profile-avatar'>
                                 <BiLogIn />
                             </Link>
