@@ -1,7 +1,7 @@
-export default function Nav({ children }) {
+export default function Nav({ children, navType, isNavExpanded }) {
     return (
-        <nav>
-            <ul className="nav">
+        <nav className={navType}>
+            <ul className={isNavExpanded ? "nav expanded" : "nav"}>
                 {children}
             </ul>
         </nav>

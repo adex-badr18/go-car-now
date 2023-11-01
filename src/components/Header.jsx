@@ -4,9 +4,12 @@ import Nav from './Nav';
 import { BsPersonCircle } from 'react-icons/bs';
 import { BiLogIn } from 'react-icons/bi';
 import { CgMenuRight } from 'react-icons/cg';
+import { useState } from 'react';
 
 
 export default function Header() {
+    const [isNavExpanded, setIsNavExpanded] = useState(false);
+
     const activeStyle = {
         fontWeight: "bold",
         color: "#161616",
@@ -24,14 +27,14 @@ export default function Header() {
                 </div>
             </Link>
 
-            <button className="hamburger">
+            <button className="hamburger" onClick={() => setIsNavExpanded(!isNavExpanded)}>
                 <CgMenuRight />
             </button>
 
-            <Nav>
-                <li><NavLink style={({ isActive }) => isActive ? activeStyle : null} to='host'>Host</NavLink></li>
-                <li><NavLink style={({ isActive }) => isActive ? activeStyle : null} to='cars'>Cars</NavLink></li>
-                <li><NavLink style={({ isActive }) => isActive ? activeStyle : null} to='about'>About</NavLink></li>
+            <Nav navType='main-nav' isNavExpanded={isNavExpanded}>
+                <li><NavLink style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='host'>Host</NavLink></li>
+                <li><NavLink style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='cars'>Cars</NavLink></li>
+                <li><NavLink style={({ isActive }) => isActive && !isNavExpanded ? activeStyle : null} to='about'>About</NavLink></li>
                 <li>
                     {
                         authenticated ?
