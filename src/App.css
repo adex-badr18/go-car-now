@@ -536,7 +536,7 @@ section.car-detail {
     font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
-    
+    cursor: pointer;
 }
 
 .sign-in-btn:disabled {
