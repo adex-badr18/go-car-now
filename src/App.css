@@ -25,6 +25,7 @@ header {
     align-items: center;
     padding: 27px;
     background-color: #FFF7ED;
+    box-shadow: 0 3px 4px -2px rgba(0, 0, 0, 0.2);
 }
 
 .hamburger {
@@ -535,6 +536,7 @@ section.car-detail {
     font-size: 16px;
     line-height: 20px;
     color: #FFFFFF;
+    
 }
 
 .sign-in-btn:disabled {
