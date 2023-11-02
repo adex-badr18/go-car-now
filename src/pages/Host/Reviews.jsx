@@ -10,7 +10,7 @@ export default function Reviews() {
             </h2>
 
             <div className="review-chart">
-                <img src="/review-chart.png" alt="Review chart" />
+                <img src={"../review-chart.png"} alt="Review chart" />
             </div>
 
             <div className="review-wrapper">

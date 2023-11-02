@@ -8,7 +8,7 @@ export default function Income() {
             <h1 className="total-income">$2,260</h1>
 
             <div className="income-chart">
-                <img src="/income-chart.png" alt="Income Chart" />
+                <img src={"../income-chart.png"} alt="Income Chart" />
             </div>
 
             <div className="transactions-container">
