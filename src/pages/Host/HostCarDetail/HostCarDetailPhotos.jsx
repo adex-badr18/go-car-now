@@ -5,7 +5,9 @@ export default function HostCarDetailPhotos() {
 
     return (
         <div className="host-car-detail-photos">
-            <img src={car?.imageUrl} alt={car?.name} />
+            <img 
+            src={car.imageUrl.startsWith('https://') ? car?.imageUrl : `../${car?.imageUrl}`} 
+            alt={car?.name} />
         </div>
     )
 }
