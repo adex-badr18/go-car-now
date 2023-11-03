@@ -32,7 +32,7 @@ async function getCars() {
         }
     });
 
-    throw new Error('Error');
+    throw {message: 'Failed to fetch cars'};
 
     // return data;
 }
