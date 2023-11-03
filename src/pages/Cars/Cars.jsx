@@ -4,6 +4,10 @@ import '../../server';
 import { useSearchParams, Link } from "react-router-dom";
 import { getCars } from "../../api";
 
+export const loader = () => {
+    return 'Cars data goes here';
+}
+
 export default function Cars() {
     const [carsArray, setCarsArray] = useState([]);
     const [carTypes, setCarTypes] = useState([]);
