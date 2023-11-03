@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Cars from './pages/Cars/Cars';
 import CarDetail from './pages/Cars/CarDetail';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
@@ -17,37 +16,73 @@ import HostCarDetailPrice from './pages/Host/HostCarDetail/HostCarDetailPrice';
 import HostCarDetailPhotos from './pages/Host/HostCarDetail/HostCarDetailPhotos';
 import PageNotFound from './pages/PageNotFound';
 import AuthRequiredLayout from './components/AuthRequiredLayout';
+import {
+    BrowserRouter,
+    createBrowserRouter,
+    createRoutesFromChildren,
+    RouterProvider,
+    Routes,
+    Route
+} from 'react-router-dom';
+
+const router = createBrowserRouter(createRoutesFromChildren(
+    <Route path='/' element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path='about' element={<About />} />
+        <Route path='cars' element={<Cars />} />
+        <Route path='cars/:id' element={<CarDetail />} />
+
+        <Route path='hostlogin' element={<HostLogin />} />
+
+        <Route element={<AuthRequiredLayout />}>
+            <Route path='host' element={<HostLayout />}>
+                <Route index element={<Dashboard />} />
+                <Route path='income' element={<Income />} />
+                <Route path='reviews' element={<Reviews />} />
+                <Route path='cars' element={<HostCars />} />
+                <Route path='cars/:id' element={<HostCarDetailLayout />}>
+                    <Route index element={<HostCarDetail />} />
+                    <Route path='price' element={<HostCarDetailPrice />} />
+                    <Route path='photos' element={<HostCarDetailPhotos />} />
+                </Route>
+            </Route>
+        </Route>
+
+        <Route path='*' element={<PageNotFound />} />
+    </Route>
+))
 
 function App() {
     return (
-        <BrowserRouter basename='/go-car-now'>
-            <Routes>
-                <Route path='/' element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path='about' element={<About />} />
-                    <Route path='cars' element={<Cars />} />
-                    <Route path='cars/:id' element={<CarDetail />} />
+        <RouterProvider router={router} />
+        // <BrowserRouter basename='/go-car-now'>
+        //     <Routes>
+        //         <Route path='/' element={<Layout />}>
+        //             <Route index element={<Home />} />
+        //             <Route path='about' element={<About />} />
+        //             <Route path='cars' element={<Cars />} />
+        //             <Route path='cars/:id' element={<CarDetail />} />
 
-                    <Route path='hostlogin' element={<HostLogin />} />
+        //             <Route path='hostlogin' element={<HostLogin />} />
 
-                    <Route element={<AuthRequiredLayout />}>
-                        <Route path='host' element={<HostLayout />}>
-                            <Route index element={<Dashboard />} />
-                            <Route path='income' element={<Income />} />
-                            <Route path='reviews' element={<Reviews />} />
-                            <Route path='cars' element={<HostCars />} />
-                            <Route path='cars/:id' element={<HostCarDetailLayout />}>
-                                <Route index element={<HostCarDetail />} />
-                                <Route path='price' element={<HostCarDetailPrice />} />
-                                <Route path='photos' element={<HostCarDetailPhotos />} />
-                            </Route>
-                        </Route>
-                    </Route>
-                    
-                    <Route path='*' element={<PageNotFound />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        //             <Route element={<AuthRequiredLayout />}>
+        //                 <Route path='host' element={<HostLayout />}>
+        //                     <Route index element={<Dashboard />} />
+        //                     <Route path='income' element={<Income />} />
+        //                     <Route path='reviews' element={<Reviews />} />
+        //                     <Route path='cars' element={<HostCars />} />
+        //                     <Route path='cars/:id' element={<HostCarDetailLayout />}>
+        //                         <Route index element={<HostCarDetail />} />
+        //                         <Route path='price' element={<HostCarDetailPrice />} />
+        //                         <Route path='photos' element={<HostCarDetailPhotos />} />
+        //                     </Route>
+        //                 </Route>
+        //             </Route>
+
+        //             <Route path='*' element={<PageNotFound />} />
+        //         </Route>
+        //     </Routes>
+        // </BrowserRouter>
     )
 }
 
