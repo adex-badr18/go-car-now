@@ -5,7 +5,7 @@ import { useSearchParams, useLoaderData, Link } from "react-router-dom";
 import { getCars } from "../../api";
 
 export const loader = () => {
-    return 'Cars data goes here';
+    return getCars();
 }
 
 export default function Cars() {
@@ -16,7 +16,7 @@ export default function Cars() {
     const [error, setError] = useState(null);
     const data = useLoaderData();
 
-    console.log(data);
+    console.log(data)
 
     let typeFilter = searchParams.get('type');
 
