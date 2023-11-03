@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CarCard from "../../components/CarCard";
 import '../../server';
-import { useSearchParams, Link } from "react-router-dom";
+import { useSearchParams, useLoaderData, Link } from "react-router-dom";
 import { getCars } from "../../api";
 
 export const loader = () => {
@@ -14,6 +14,9 @@ export default function Cars() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const data = useLoaderData();
+
+    console.log(data);
 
     let typeFilter = searchParams.get('type');
 
