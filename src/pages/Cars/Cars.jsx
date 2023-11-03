@@ -9,24 +9,18 @@ export const loader = () => {
 }
 
 export default function Cars() {
-    const [carTypes, setCarTypes] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
     const [error, setError] = useState(null);
     const carsArray = useLoaderData();
 
     let typeFilter = searchParams.get('type');
 
-    useEffect(() => {
-        setCarTypes(() => {
-            const types = [];
-            carsArray?.forEach(car => {
-                if (!types.includes(car.type)) {
-                    types.push(car.type)
-                }
-            })
-            return types;
-        });
-    }, [carsArray]);
+    const carTypes = [];
+    carsArray.forEach(car => {
+        if (!carTypes.includes(car.type)) {
+            carTypes.push(car.type)
+        }
+    });
 
     const carsElement = carsArray?.filter(car => {
             return typeFilter ? car.type.toLowerCase() === typeFilter : car
