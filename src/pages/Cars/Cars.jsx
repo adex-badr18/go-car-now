@@ -9,31 +9,12 @@ export const loader = () => {
 }
 
 export default function Cars() {
-    const [carsArray, setCarsArray] = useState([]);
     const [carTypes, setCarTypes] = useState([]);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const data = useLoaderData();
-
-    console.log(data)
+    const carsArray = useLoaderData();
 
     let typeFilter = searchParams.get('type');
-
-    useEffect(() => {
-        async function loadCars() {
-            try {
-                const data = await getCars();
-                setCarsArray(data);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        loadCars();
-    }, []);
 
     useEffect(() => {
         setCarTypes(() => {
@@ -79,12 +60,6 @@ export default function Cars() {
             return prevParams;
         });
     }
-
-    if (loading) return (
-        <section>
-            <h1>Loading...</h1>
-        </section>
-    )
 
     if (error) return (
         <section>
