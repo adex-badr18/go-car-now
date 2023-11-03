@@ -16,6 +16,7 @@ import HostCarDetailPrice from './pages/Host/HostCarDetail/HostCarDetailPrice';
 import HostCarDetailPhotos from './pages/Host/HostCarDetail/HostCarDetailPhotos';
 import PageNotFound from './pages/PageNotFound';
 import AuthRequiredLayout from './components/AuthRequiredLayout';
+import Error from './pages/Error';
 import {
     BrowserRouter,
     createBrowserRouter,
@@ -29,7 +30,7 @@ const router = createBrowserRouter(createRoutesFromChildren(
     <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
-        <Route path='cars' element={<Cars />} loader={carsLoader} />
+        <Route path='cars' element={<Cars />} errorElement={<Error />} loader={carsLoader} />
         <Route path='cars/:id' element={<CarDetail />} />
 
         <Route path='hostlogin' element={<HostLogin />} />

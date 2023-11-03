@@ -32,7 +32,9 @@ async function getCars() {
         }
     });
 
-    return data;
+    throw new Error('Error');
+
+    // return data;
 }
 
 async function getCarDetails(carId) {
