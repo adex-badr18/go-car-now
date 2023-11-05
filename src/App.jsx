@@ -31,7 +31,7 @@ const router = createBrowserRouter(createRoutesFromChildren(
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='cars' element={<Cars />} errorElement={<Error />} loader={carsLoader} />
-        <Route path='cars/:id' element={<CarDetail />} loader={carDetailLoader} />
+        <Route path='cars/:id' element={<CarDetail />} errorElement={<Error />} loader={carDetailLoader} />
 
         <Route path='hostlogin' element={<HostLogin />} />
 
@@ -41,7 +41,7 @@ const router = createBrowserRouter(createRoutesFromChildren(
                 <Route path='income' element={<Income />} />
                 <Route path='reviews' element={<Reviews />} />
                 <Route path='cars' element={<HostCars />} loader={hostCarsLoader} />
-                <Route path='cars/:id' element={<HostCarDetailLayout />} loader={hostCarDetailLayoutLoader}>
+                <Route path='cars/:id' element={<HostCarDetailLayout />} errorElement={<Error />} loader={hostCarDetailLayoutLoader}>
                     <Route index element={<HostCarDetail />} />
                     <Route path='price' element={<HostCarDetailPrice />} />
                     <Route path='photos' element={<HostCarDetailPhotos />} />

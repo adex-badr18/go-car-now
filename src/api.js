@@ -32,8 +32,6 @@ async function getCars() {
         }
     });
 
-    // throw {message: 'Failed to fetch cars'};
-
     return data;
 }
 
@@ -90,10 +88,28 @@ async function fetchHostCarDetail(carId) {
             imageUrl: car.imageUrl.startsWith('https://') ? car.imageUrl : `../..${car.imageUrl}`
         }
     });
-
+    // throw {message: 'Failed to fetch cars'};
     return data[0];
 }
 
+async function loginUser(creds) {
+    const res = await fetch("/api/login",
+        { method: "post", body: JSON.stringify(creds) }
+    )
+    const data = await res.json()
+
+    if (!res.ok) {
+        throw {
+            message: data.message,
+            statusText: res.statusText,
+            status: res.status
+        }
+    }
+
+    return data
+}
+
+export { getCarDetails, getCars, fetchHostCars, fetchHostCarDetail, loginUser }
 
 // async function getCars() {
 //     const res = await fetch('/api/cars');
@@ -153,22 +169,3 @@ async function fetchHostCarDetail(carId) {
 //         statusText: res.statusText
 //     };
 // }
-
-async function loginUser(creds) {
-    const res = await fetch("/api/login",
-        { method: "post", body: JSON.stringify(creds) }
-    )
-    const data = await res.json()
-
-    if (!res.ok) {
-        throw {
-            message: data.message,
-            statusText: res.statusText,
-            status: res.status
-        }
-    }
-
-    return data
-}
-
-export { getCarDetails, getCars, fetchHostCars, fetchHostCarDetail, loginUser }
