@@ -2,8 +2,8 @@ import './App.css';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
-import Cars, {loader as carsLoader} from './pages/Cars/Cars';
-import CarDetail from './pages/Cars/CarDetail';
+import Cars, { loader as carsLoader } from './pages/Cars/Cars';
+import CarDetail, { loader as carDetailLoader } from './pages/Cars/CarDetail';
 import Dashboard from './pages/Host/Dashboard';
 import Income from './pages/Host/Income';
 import Reviews from './pages/Host/Reviews';
@@ -31,7 +31,7 @@ const router = createBrowserRouter(createRoutesFromChildren(
         <Route index element={<Home />} />
         <Route path='about' element={<About />} />
         <Route path='cars' element={<Cars />} errorElement={<Error />} loader={carsLoader} />
-        <Route path='cars/:id' element={<CarDetail />} />
+        <Route path='cars/:id' element={<CarDetail />} loader={carDetailLoader} />
 
         <Route path='hostlogin' element={<HostLogin />} />
 

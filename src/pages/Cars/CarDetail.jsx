@@ -1,31 +1,19 @@
 import { useEffect, useState } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import { useParams, Link, useLocation, useLoaderData } from "react-router-dom";
 import { BiArrowBack } from "react-icons/bi";
 import { getCarDetails } from "../../api";
 
 import '../../server';
 
+export async function loader({ params }) {
+    const data = await getCarDetails(params.id);
+    return data;
+}
+
 export default function CarDetail() {
-    const params = useParams();
-    const [car, setCar] = useState([]);
     const location = useLocation();
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function loadCarDetails() {
-            try {
-                const data = await getCarDetails(params.id);
-                setCar(data);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        loadCarDetails();
-    }, [params.id]);
+    const car = useLoaderData();
 
     const query = location.state?.query || '';
 
@@ -33,14 +21,6 @@ export default function CarDetail() {
         return (
             <section>
                 <h1>Sorry, an error occurred: {error.message}</h1>
-            </section>
-        )
-    }
-
-    if (loading) {
-        return (
-            <section>
-                <h1>Loading...</h1>
             </section>
         )
     }
