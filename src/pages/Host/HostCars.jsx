@@ -1,27 +1,16 @@
 import CarItem from "../../components/CarItem";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { fetchHostCars } from "../../api";
 
+export async function loader() {
+    const data = await fetchHostCars();
+    return data;
+}
+
 export default function HostCars() {
-    const [hostCars, setHostCars] = useState(null);
+    const hostCars = useLoaderData();
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function loadHostCars() {
-            try {
-                const data = await fetchHostCars();
-                setHostCars(data);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        loadHostCars();
-    }, []);
 
     const hostCarsElement = hostCars?.map(car => (
         <Link to={car.id} key={car.id}>
@@ -42,8 +31,7 @@ export default function HostCars() {
                             hostCarsElement :
                             <h4 className="empty-cars">
                                 {
-                                    error ? `Sorry an error occurred: ${error.message}` :
-                                        loading ? 'Loading...' : 'Cars not available...'
+                                    error && `Sorry an error occurred: ${error.message}`
                                 }
                             </h4>
                     }

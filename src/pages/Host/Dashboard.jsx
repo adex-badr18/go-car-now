@@ -1,28 +1,17 @@
 import { useEffect, useState } from "react";
 import { AiFillStar } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import CarItem from "../../components/CarItem";
 import { fetchHostCars } from "../../api";
 
+export async function loader() {
+    const data = await fetchHostCars();
+    return data;
+}
+
 export default function Dashboard() {
-    const [hostCars, setHostCars] = useState(null);
     const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function loadHostCars() {
-            try {
-                const data = await fetchHostCars();
-                setHostCars(data);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setLoading(false);
-            }
-        }
-
-        loadHostCars();
-    }, []);
+    const hostCars = useLoaderData();
 
     const hostCarsElement = hostCars?.map((car, index) => {
         if (index > 2) return;
@@ -70,8 +59,7 @@ export default function Dashboard() {
                             hostCarsElement :
                             <h4 className="empty-cars">
                                 {
-                                    error ? `Sorry an error occurred: ${error.message}` :
-                                        loading ? 'Loading...' : 'Cars not available...'
+                                    error && `Sorry an error occurred: ${error.message}`
                                 }
                             </h4>
                     }
